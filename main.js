@@ -46,6 +46,7 @@ const cashValues = {
    silverMoney: 45,
    goldMoney: 50
 }
+let time = 0;
 
 function allowDrop(e) { e.preventDefault(); }
 function drag(e) { e.dataTransfer.setData("text", e.target.id); }
@@ -65,13 +66,14 @@ function drop(e) {
          if (returnValue) {
             incomer.innerHTML = "";
             customers.customer1.demands = "satiated";
+            plates[incomer.id] = [];
          }
       }
    }
    // Steak in Pan
    if (e.target.id.search("pan") !== -1) {
       if (!pans[e.target.id] && incomer.dataset.iscooked == "false") {
-         pans[e.target.id] = true;
+         fill(pans[e.target.id], true);
          document.querySelector(`#${data}`).style.position = "static";
          document.querySelector(`#${data}`).style.opacity = "1";
          e.target.appendChild(incomer);
@@ -81,6 +83,7 @@ function drop(e) {
    // Steak in Plate
    if (plates[e.target.id] && incomer.dataset.iscooked == "true") {
       if (!plates[e.target.id].includes(incomer.dataset.foodtype)) {
+         fill(pans[incomer.parentElement.id], false);
          plates[e.target.id].push("steak");
          document.querySelector(`#${data}`).style.position = "static";
          document.querySelector(`#${data}`).style.opacity = "1";
@@ -102,15 +105,17 @@ function drop(e) {
       }
    }
    // Anything in Tras Can
-   if (e.target.id === "trsh-cn") { document.querySelector(`#${data}`).remove(); }
+   if (e.target.id === "trsh-cn") {
+      if (incomer.classList.contains("plate")) { }
+      else { document.querySelector(`#${data}`).remove(); }
+   }
 }
 
 function createNewSteak() {
    let newSteak = document.querySelector(".raw-steak-template").cloneNode();
    newSteak.style.pointerEvents = "auto";
    newSteak.setAttribute("id", `id-${Date.now()}`);
-   newSteak.classList.remove("raw-steak-template");
-   newSteak.classList.add("raw-steak");
+   editClass(newSteak, "raw-steak-template", "raw-steak");
    document.body.appendChild(newSteak);
 }
 
@@ -118,8 +123,7 @@ function createNewBread() {
    let newBurgerBread = document.querySelector(".burger-bread-template").cloneNode();
    newBurgerBread.style.pointerEvents = "auto";
    newBurgerBread.setAttribute("id", `id-${Date.now()}`);
-   newBurgerBread.classList.remove("burger-bread-template");
-   newBurgerBread.classList.add("burger-bread");
+   editClass(newBurgerBread, "burger-steak-template", "burger-steak");
    document.body.appendChild(newBurgerBread);
 }
 
@@ -135,9 +139,11 @@ function createCustomer() {
       customers.customer1.joyLevel = 6;
       let newCustomer = choosePerson();
       document.querySelector("#customer1").src = `Images/Customers/${newCustomer}/${customers.customer1.joyLevel}.svg`;
-      document.querySelector("#customer1").style.display = "inline";
+      showObj("#customer1");
       customers.customer1.demands = createOrder(customers.customer1);
-      console.log(customers.customer1.demands);
+      if (customers.customer1.demands.includes("steak", "burgerBread")) { document.querySelector("#customer1-demands").src = "url('Images/Dreams/plain-burger.svg')"; }
+      else if (customers.customer1.demands.includes("burgerBread")) { document.querySelector("#customer1-demands").src = "url('Images/Dreams/burger-bread.svg')"; }
+      else if (customers.customer1.demands.includes("steak")) { document.querySelector("#customer1-demands").src = "url('Images/Dreams/steak.svg')"; }
       let joyLoop = setInterval(() => {
          if (customers.customer1.demands !== "satiated") {
             if (customers.customer1.joyLevel >= 2) {
@@ -145,8 +151,7 @@ function createCustomer() {
                document.querySelector("#customer1").src = `Images/Customers/${newCustomer}/${customers.customer1.joyLevel}.svg`;
             }
             else {
-               document.querySelector("#customer1").style.pointerEvents = "none";
-               document.querySelector("#customer1").style.opacity = "0";
+               hideObj("#customer1");
                clearInterval(joyLoop);
             }
          }
@@ -173,11 +178,27 @@ function choosePerson() {
    return person[Math.floor(Math.random() * person.length)];
 }
 
+function fill(what, toDo) { what = toDo; }
+function editClass(toThis, remove, add) {
+   toThis.classList.remove(remove);
+   toThis.classList.add(add);
+}
+function hideObj(objId) {
+   document.querySelector(objId).style.opacity = "0";
+   document.querySelector(objId).style.pointerEvents = "none";
+}
+function showObj(objId) {
+   document.querySelector(objId).style.opacity = "1";
+   document.querySelector(objId).style.pointerEvents = "auto";
+}
+
 createCustomer();
 
-// today GitHub!
+setInterval(() => {
+   time++;
+   if (time === 8) { createCustomer(); }
+}, 1000);
 
-// set pans and plates as empty as empty
 // time for cooking set like Vegetable Dash plants so if paused start adding time then when unpaused add to original time
 // level, with set customers and orders
 // bread and sauces

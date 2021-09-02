@@ -12,12 +12,22 @@
 </head>
 <body>
    <div class="customers">
-      <img id="customer1" ondrop="drop(event)" ondragover="allowDrop(event)" class="customer-template" src="Images/Customers/g/template.svg">
-      <span id="customerTooltip1" class="customerTooltip"></span>
-      <img id="customer2" ondrop="drop(event)" ondragover="allowDrop(event)" class="customer-template" src="Images/Customers/b/template.svg">
-      <img id="customer3" ondrop="drop(event)" ondragover="allowDrop(event)" class="customer-template" src="Images/Customers/d/template.svg">
-      <img id="customer4" ondrop="drop(event)" ondragover="allowDrop(event)" class="customer-template" src="Images/Customers/p/template.svg">
-      <img id="customer5" ondrop="drop(event)" ondragover="allowDrop(event)" class="customer-template" src="Images/Customers/jenkins.svg">
+      <div class="customerTooltipParent">
+         <img id="customer1" ondrop="drop(event)" ondragover="allowDrop(event)" class="customer-template" src="">
+         <span class="customerTooltip"><img id="customer1-demands" class="cutomer-demands" src=""></span>
+      </div>
+      <div class="customerTooltipParent">
+         <img id="customer2" ondrop="drop(event)" ondragover="allowDrop(event)" class="customer-template" src="">
+      </div>
+      <div class="customerTooltipParent">
+         <img id="customer3" ondrop="drop(event)" ondragover="allowDrop(event)" class="customer-template" src="">
+      </div>
+      <div class="customerTooltipParent">
+         <img id="customer4" ondrop="drop(event)" ondragover="allowDrop(event)" class="customer-template" src="">
+      </div>
+      <div class="customerTooltipParent">
+         <img id="customer5" ondrop="drop(event)" ondragover="allowDrop(event)" class="customer-template" src="">
+      </div>
    </div>
    <div class="moneyCounter">
       <img id="money1" ondrop="drop(event)" ondragover="allowDrop(event)" class="money-template" src="Images/Money/goldCoin.svg">

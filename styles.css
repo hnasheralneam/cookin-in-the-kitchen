@@ -184,3 +184,36 @@ body {
    width: 4vw;
    margin: -2vh 7.8vw;
 }
+
+.customerTooltipParent {
+   position: relative;
+}
+
+.customerTooltip {
+   position: absolute;
+   top: 1.8vh;
+   left: 14%;
+   height: 12vh;
+   width: 7vw;
+   border-radius: 1vh;
+   background-color: #fadeff;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.customerTooltip::before {
+   content: "";
+   position: absolute;
+   top: 35%;
+   margin-top: -2vh;
+   right: 100%;
+   border-style: solid;
+   border-width: 2vh;
+   border-color: transparent #fadeff transparent transparent ;
+}
+
+.cutomer-demands {
+   height: 10vh;
+   width: 7vh;
+}
