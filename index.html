@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Cookin' in the Kitchen</title>
+   <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+   <div class="customers">
+      <img id="customer1" ondrop="drop(event)" ondragover="allowDrop(event)" class="customer-template" src="Images/Customers/g/template.svg">
+      <span id="customerTooltip1" class="customerTooltip"></span>
+      <img id="customer2" ondrop="drop(event)" ondragover="allowDrop(event)" class="customer-template" src="Images/Customers/b/template.svg">
+      <img id="customer3" ondrop="drop(event)" ondragover="allowDrop(event)" class="customer-template" src="Images/Customers/d/template.svg">
+      <img id="customer4" ondrop="drop(event)" ondragover="allowDrop(event)" class="customer-template" src="Images/Customers/p/template.svg">
+      <img id="customer5" ondrop="drop(event)" ondragover="allowDrop(event)" class="customer-template" src="Images/Customers/jenkins.svg">
+   </div>
+   <div class="moneyCounter">
+      <img id="money1" ondrop="drop(event)" ondragover="allowDrop(event)" class="money-template" src="Images/Money/goldCoin.svg">
+      <img id="money2" ondrop="drop(event)" ondragover="allowDrop(event)" class="money-template" src="Images/Money/goldCoin.svg">
+      <img id="money3" ondrop="drop(event)" ondragover="allowDrop(event)" class="money-template" src="Images/Money/goldCoin.svg">
+      <img id="money4" ondrop="drop(event)" ondragover="allowDrop(event)" class="money-template" src="Images/Money/goldCoin.svg">
+      <img id="money5" ondrop="drop(event)" ondragover="allowDrop(event)" class="money-template" src="Images/Money/goldCoin.svg">
+   </div>
+   <div class="customer-counter"></div>
+   <div class="customer-counter-edge"></div>
+   <div class="customer-counter-underspace"></div>
+   <div class="work-counter"></div>
+   <div class="work-counter-edge"></div>
+   <div class="plate-carpet">
+      <div id="plate1" class="plate" ondrop="drop(event)" draggable="true" ondragstart="drag(event)" ondragover="allowDrop(event)"></div>
+   </div>
+   <div class="stove">
+      <div id="pan1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+   </div>
+   <div id="trsh-cn" ondrop="drop(event)" ondragover="allowDrop(event)"><p style="pointer-events: none;">Trash <br> Cn</p></div>
+
+   <img onmouseover="createNewSteak()" class="rw-stk-strg" src="Images/raw-steak-storage.svg">
+   <img onmouseover="createNewBread()" class="bgr-brd-strg" src="Images/burger-bread-storage.svg">
+   <img id="steak" data-iscooked="false" data-foodtype="steak" draggable="true" ondragstart="drag(event)" class="raw-steak-template" src="Images/raw-steak.svg">
+   <img id="burgerBread" data-foodtype="burgerBread" draggable="true" ondragstart="drag(event)" class="burger-bread-template" src="Images/burger-bread.svg">
+</body>
+<script src="main.js" charset="utf-8"></script>
+</html>

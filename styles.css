@@ -1,0 +1,186 @@
+* {
+   padding: 0;
+   margin: 0;
+}
+
+body {
+   overflow: hidden;
+}
+
+#pan1 {
+   height: 10vh;
+   width: 25vh;
+   position: absolute;
+   top: 2vh;
+   left: .8vw;
+   background-image: url("Images/pan.svg");
+   background-size: contain;
+   overflow: hidden;
+   display: flex;
+   align-items: center;
+}
+
+#plate1 {
+   height: 10vh;
+   width: 16vh;
+   margin: 1vh 1.8vw;
+   background-image: url("Images/plate.svg");
+   background-size: cover;
+   overflow: hidden;
+   display: flex;
+   align-items: center;
+}
+
+.rw-stk-strg {
+   height: 25vh;
+   position: absolute;
+   top: 40vh;
+   left: 15vw;
+}
+
+.bgr-brd-strg {
+   height: 25vh;
+   position: absolute;
+   top: 40vh;
+   left: 26vw;
+}
+
+.customers {
+   width: 100vw;
+   height: 15vh;
+   background-color: #504c41;
+   overflow: hidden;
+}
+
+.customer-counter {
+   width: 100vw;
+   height: 12vh;
+   background-color: #5d4500;
+}
+
+.customer-counter-edge {
+   width: 100vw;
+   height: 3vh;
+   background-color: #4b3800;
+}
+
+.customer-counter-underspace {
+   width: 100vw;
+   height: 8vh;
+   background-color: #6f6f6f;
+}
+
+.work-counter {
+   width: 100vw;
+   height: 32vh;
+   background-color: #ababab;
+}
+
+.work-counter-edge {
+   width: 100vw;
+   height: 3vh;
+   background-color: #636262;
+}
+
+.plate-carpet {
+   position: absolute;
+   top: 38vh;
+   left: 1vw;
+   width: 12vw;
+   height: 32vh;
+   background-color: #820606;
+}
+
+.stove {
+   position: absolute;
+   top: 38vh;
+   left: 40vw;
+   width: 20vw;
+   height: 32vh;
+   background-color: #222222;
+}
+
+.raw-steak-template {
+   pointer-events: none;
+   opacity: 0;
+   position: absolute;
+   top: 47vh;
+   left: 17vw;
+   height: 8vh;
+   margin-top: -1vh;
+   padding-left: 1.4vw;
+}
+
+.raw-steak {
+   pointer-events: none;
+   opacity: 0;
+   position: absolute;
+   top: 47vh;
+   left: 17vw;
+   height: 8vh;
+   margin-top: -1vh;
+   padding-left: 1vw;
+}
+
+.burger-bread-template {
+   pointer-events: none;
+   opacity: 0;
+   position: absolute;
+   top: 47vh;
+   left: 25vw;
+   height: 8vh;
+   margin-top: -1vh;
+   padding-left: 1.4vw;
+}
+
+.burger-bread {
+   pointer-events: none;
+   opacity: 0;
+   position: absolute;
+   top: 47vh;
+   left: 25vw;
+   height: 8vh;
+   margin-top: -1vh;
+   padding-left: 1vw;
+}
+
+#trsh-cn {
+   position: absolute;
+   left: 2vw;
+   bottom: 2vh;
+   height: 20vh;
+   width: 8vw;
+   text-align: center;
+   background-color: #005960;
+}
+
+#trsh-cn p {
+   color: #fff;
+   font-family: "GoodFont3";
+   font-size: 5vh
+}
+
+.customer-template {
+   /* pointer-events: none;
+   opacity: 0; */
+   margin: 0 4.8vw;
+}
+
+#customer1 { width: 10vw; }
+#customer2 { width: 10vw; }
+#customer3 { width: 10vw; }
+#customer4 { width: 10vw; }
+#customer5 { width: 10vw; }
+
+.moneyCounter {
+   position: absolute;
+   top: 15vh;
+   width: 100vw;
+   height: 12vh;
+}
+
+.money-template {
+   display: inline;
+   width: 4vw;
+   margin: -2vh 7.8vw;
+}
