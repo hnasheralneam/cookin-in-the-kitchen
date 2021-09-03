@@ -82,6 +82,12 @@ body {
    background-color: #636262;
 }
 
+.work-counter-underspace {
+   width: 100vw;
+   height: 27vh;
+   background-color: #424242;
+}
+
 .plate-carpet {
    position: absolute;
    top: 38vh;
@@ -178,9 +184,20 @@ body {
 }
 
 .money-template {
+   pointer-events: none;
+   opacity: 0;
    display: inline;
    width: 4vw;
    margin: -2vh 7.8vw;
+}
+
+.playerMoney {
+   position: absolute;
+   top: .5vh;
+   left: 1vw;
+   font-family: "Nunito";
+   color: #fff;
+   font-size: 5vh;
 }
 
 .customerTooltipParent {
@@ -188,6 +205,8 @@ body {
 }
 
 .customerTooltip {
+   pointer-events: none;
+   opacity: 0;
    position: absolute;
    top: 1.8vh;
    left: 14%;

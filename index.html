@@ -30,17 +30,18 @@
       </div>
    </div>
    <div class="moneyCounter">
-      <img id="money1" ondrop="drop(event)" ondragover="allowDrop(event)" class="money-template" src="Images/Money/goldCoin.svg">
-      <img id="money2" ondrop="drop(event)" ondragover="allowDrop(event)" class="money-template" src="Images/Money/goldCoin.svg">
-      <img id="money3" ondrop="drop(event)" ondragover="allowDrop(event)" class="money-template" src="Images/Money/goldCoin.svg">
-      <img id="money4" ondrop="drop(event)" ondragover="allowDrop(event)" class="money-template" src="Images/Money/goldCoin.svg">
-      <img id="money5" ondrop="drop(event)" ondragover="allowDrop(event)" class="money-template" src="Images/Money/goldCoin.svg">
+      <img id="money1" onclick="earnMoney(1)" ondrop="drop(event)" ondragover="allowDrop(event)" class="money-template" src="Images/Money/goldCoin.svg">
+      <img id="money2" onclick="earnMoney(2)" ondrop="drop(event)" ondragover="allowDrop(event)" class="money-template" src="Images/Money/goldCoin.svg">
+      <img id="money3" onclick="earnMoney(3)" ondrop="drop(event)" ondragover="allowDrop(event)" class="money-template" src="Images/Money/goldCoin.svg">
+      <img id="money4" onlick="earnMoney(4)" ondrop="drop(event)" ondragover="allowDrop(event)" class="money-template" src="Images/Money/goldCoin.svg">
+      <img id="money5" onclick="earnMoney(5)" ondrop="drop(event)" ondragover="allowDrop(event)" class="money-template" src="Images/Money/goldCoin.svg">
    </div>
    <div class="customer-counter"></div>
    <div class="customer-counter-edge"></div>
    <div class="customer-counter-underspace"></div>
    <div class="work-counter"></div>
    <div class="work-counter-edge"></div>
+   <div class="work-counter-underspace"></div>
    <div class="plate-carpet">
       <div id="plate1" class="plate" ondrop="drop(event)" draggable="true" ondragstart="drag(event)" ondragover="allowDrop(event)"></div>
    </div>
@@ -49,10 +50,12 @@
    </div>
    <div id="trsh-cn" ondrop="drop(event)" ondragover="allowDrop(event)"><p style="pointer-events: none;">Trash <br> Cn</p></div>
 
-   <img onmouseover="createNewSteak()" class="rw-stk-strg" src="Images/raw-steak-storage.svg">
-   <img onmouseover="createNewBread()" class="bgr-brd-strg" src="Images/burger-bread-storage.svg">
+   <img onmouseover="createNewSteak()" ondragstart="return false" class="rw-stk-strg" src="Images/raw-steak-storage.svg">
+   <img onmouseover="createNewBread()" ondragstart="return false" class="bgr-brd-strg" src="Images/burger-bread-storage.svg">
    <img id="steak" data-iscooked="false" data-foodtype="steak" draggable="true" ondragstart="drag(event)" class="raw-steak-template" src="Images/raw-steak.svg">
    <img id="burgerBread" data-foodtype="burgerBread" draggable="true" ondragstart="drag(event)" class="burger-bread-template" src="Images/burger-bread.svg">
+   <!-- Money -->
+   <span class="playerMoney" title="MONEY">0$</span>
 </body>
 <script src="main.js" charset="utf-8"></script>
 </html>

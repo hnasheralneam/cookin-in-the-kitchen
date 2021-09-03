@@ -1,3 +1,4 @@
+// Variables
 const pans = {
    pan1: false,
 }
@@ -11,34 +12,40 @@ const countertop = {
    spot4: false,
    spot5: false,
 }
-const customers = {
+const custs = {
    customer1: {
       isHere: false,
       joyLevel: 6,
       demands: [],
+      spot: false
    },
    customer2: {
       isHere: false,
       joyLevel: 6,
       demands: [],
+      spot: false
    },
    customer3: {
       isHere: false,
       joyLevel: 6,
       demands: [],
+      spot: false
    },
    customer4: {
       isHere: false,
       joyLevel: 6,
       demands: [],
+      spot: false
    },
    customer5: {
       isHere: false,
       joyLevel: 6,
       demands: [],
+      spot: false
    },
 }
 const cashValues = {
+   money: 0,
    bronzeCoin: 10,
    silverCoin: 20,
    goldCoin: 30,
@@ -48,69 +55,97 @@ const cashValues = {
 }
 let time = 0;
 
+// Dropping
 function allowDrop(e) { e.preventDefault(); }
 function drag(e) { e.dataTransfer.setData("text", e.target.id); }
-
 function drop(e) {
    e.preventDefault();
    let data = e.dataTransfer.getData("text");
    let incomer = document.querySelector(`#${data}`);
-   // Customer
+   // Steak
+   if (incomer.dataset.foodtype === "steak") {
+      // If in pan
+      if (e.target.id.search("pan") !== -1) {
+         // If pan is empty and steak is raw
+         if (!pans[e.target.id] && incomer.dataset.iscooked == "false") {
+            // Set pan as filled
+            fill(pans[e.target.id], true);
+            // Make steak visible and add to pan
+            document.querySelector(`#${data}`).style.position = "static";
+            document.querySelector(`#${data}`).style.opacity = "1";
+            e.target.appendChild(incomer);
+            // Start cooking steak
+            startCooking("pan1", data);
+         }
+      }
+      // If in plate & cooked
+      if (plates[e.target.id] && incomer.dataset.iscooked == "true") {
+         // If it is not already on plate
+         if (!plates[e.target.id].includes(incomer.dataset.foodtype)) {
+            // Empty the pan it came from
+            fill(pans[incomer.parentElement.id], false);
+            // Add steak to plate
+            plates[e.target.id].push("steak");
+            document.querySelector(`#${data}`).style.pointerEvents = "none";
+            checkForOthers("steak");
+            e.target.appendChild(incomer);
+         }
+      }
+   }
+   // Bread
+   if (incomer.dataset.foodtype === "burgerBread") {
+      // If it is not already in plate
+      if (!plates[e.target.id].includes("burgerBread")) {
+         // Add to plate
+         plates[e.target.id].push("burgerBread");
+         document.querySelector(`#${data}`).style.pointerEvents = "none";
+         // Make visible
+         document.querySelector(`#${data}`).style.position = "static";
+         document.querySelector(`#${data}`).style.opacity = "1";
+         // Put in plate
+         checkForOthers("burgerBread");
+         e.target.appendChild(incomer);
+      }
+   }
+   // Customers
    if (e.target.id.search("customer") !== -1 && incomer.classList.contains("plate")) {
+      // If customer1
       if (e.target.id === "customer1") {
          let returnValue;
-         for (i = 0; i < customers["customer1"]["demands"].length; i++) {
-            if (plates[incomer.id].includes(customers["customer1"]["demands"][i])) { returnValue = true; }
+         for (i = 0; i < custs["customer1"]["demands"].length; i++) {
+            if (plates[incomer.id].includes(custs["customer1"]["demands"][i])) { returnValue = true; }
             else { return false; }
          }
-         if (returnValue) {
-            incomer.innerHTML = "";
-            customers.customer1.demands = "satiated";
-            plates[incomer.id] = [];
-         }
+         // If you have what they want, you are done
+         if (returnValue) { clearCustomer("customer1", incomer); }
       }
    }
-   // Steak in Pan
-   if (e.target.id.search("pan") !== -1) {
-      if (!pans[e.target.id] && incomer.dataset.iscooked == "false") {
-         fill(pans[e.target.id], true);
-         document.querySelector(`#${data}`).style.position = "static";
-         document.querySelector(`#${data}`).style.opacity = "1";
-         e.target.appendChild(incomer);
-         startCooking("pan1", data);
-      }
-   }
-   // Steak in Plate
-   if (plates[e.target.id] && incomer.dataset.iscooked == "true") {
-      if (!plates[e.target.id].includes(incomer.dataset.foodtype)) {
-         fill(pans[incomer.parentElement.id], false);
-         plates[e.target.id].push("steak");
-         document.querySelector(`#${data}`).style.position = "static";
-         document.querySelector(`#${data}`).style.opacity = "1";
-         e.target.appendChild(incomer);
-      }
-   }
-   // Bread in Plate
-   if (plates[e.target.id]) {
-      if (!plates[e.target.id].includes("burgerBread") && incomer.dataset.foodtype === "burgerBread") {
-         plates[e.target.id].push("burgerBread");
-         document.querySelector(`#${data}`).style.position = "static";
-         document.querySelector(`#${data}`).style.opacity = "1";
-         if (plates[e.target.id].includes("steak")) {
-            document.getElementById(e.target.id).innerHTML = "";
-            e.target.appendChild(incomer);
-            incomer.src = "Images/plain-burger.svg";
-         }
-         else { e.target.appendChild(incomer); }
-      }
-   }
-   // Anything in Tras Can
+   // Trsh Cn
    if (e.target.id === "trsh-cn") {
-      if (incomer.classList.contains("plate")) { }
+      if (incomer.classList.contains("plate")) { incomer.innerHTML = ""; plates[incomer.id] = []; }
       else { document.querySelector(`#${data}`).remove(); }
+   }
+   // Functions
+   function checkForOthers(type) {
+      if (type === "burgerBread" && plates[e.target.id].includes("steak")) { setAs("plainBurger"); }
+      if (type === "steak" && plates[e.target.id].includes("burgerBread")) { setAs("plainBurger"); }
+      function setAs(input) {
+         document.getElementById(e.target.id).innerHTML = "";
+         incomer.src = "Images/plain-burger.svg";
+         plates[e.target.id] = [input];
+      }
    }
 }
 
+// Time loop
+setInterval(() => {
+   time++;
+   if (time === 8) { createCustomer(); }
+   // Other stuff
+   document.querySelector(".playerMoney").textContent = `${cashValues.money}$`;
+}, 1000);
+
+// Make new food items
 function createNewSteak() {
    let newSteak = document.querySelector(".raw-steak-template").cloneNode();
    newSteak.style.pointerEvents = "auto";
@@ -118,7 +153,6 @@ function createNewSteak() {
    editClass(newSteak, "raw-steak-template", "raw-steak");
    document.body.appendChild(newSteak);
 }
-
 function createNewBread() {
    let newBurgerBread = document.querySelector(".burger-bread-template").cloneNode();
    newBurgerBread.style.pointerEvents = "auto";
@@ -127,6 +161,7 @@ function createNewBread() {
    document.body.appendChild(newBurgerBread);
 }
 
+// Start cooking
 function startCooking(inPan, whichSteak) {
    setTimeout(() => {
       document.querySelector(`#${whichSteak}`).src = "Images/cooked-steak.svg";
@@ -134,72 +169,121 @@ function startCooking(inPan, whichSteak) {
    }, 3000);
 }
 
+// Create customers
 function createCustomer() {
-   if (!customers.customer1.isHere) {
-      customers.customer1.joyLevel = 6;
+   if (!countertop.spot1) {
+      // Choose a spot for the customer and set them as here
+      custs.customer1.isHere = true
+      custs.customer1.spot = chooseSpot("customer1");
+      countertop[custs.customer1.spot] = true;
+      // Choose customer image and set it
       let newCustomer = choosePerson();
-      document.querySelector("#customer1").src = `Images/Customers/${newCustomer}/${customers.customer1.joyLevel}.svg`;
+      document.querySelector("#customer1").src = `Images/Customers/${newCustomer}/${custs.customer1.joyLevel}.svg`;
       showObj("#customer1");
-      customers.customer1.demands = createOrder(customers.customer1);
-      if (customers.customer1.demands.includes("steak", "burgerBread")) { document.querySelector("#customer1-demands").src = "Images/Dreams/plain-burger.svg"; }
-      else if (customers.customer1.demands.includes("burgerBread")) { document.querySelector("#customer1-demands").src = "Images/Dreams/burger-bread.svg"; }
-      else if (customers.customer1.demands.includes("steak")) { document.querySelector("#customer1-demands").src = "Images/Dreams/steak.svg"; }
+      // Give them demands and display their dreams
+      custs.customer1.demands = createOrder(custs.customer1);
+      if (custs.customer1.demands.includes("plainBurger")) { setDream("#customer1-demands", "plain-burger.svg"); }
+      else if (custs.customer1.demands.includes("burgerBread")) { setDream("#customer1-demands", "burger-bread.svg"); }
+      else if (custs.customer1.demands.includes("steak")) { setDream("#customer1-demands", "steak.svg"); }
+      // Loop for joy
       let joyLoop = setInterval(() => {
-         if (customers.customer1.demands !== "satiated") {
-            if (customers.customer1.joyLevel >= 2) {
-               customers.customer1.joyLevel--;
-               document.querySelector("#customer1").src = `Images/Customers/${newCustomer}/${customers.customer1.joyLevel}.svg`;
+         if (custs.customer1.demands !== "satiated") {
+            if (custs.customer1.joyLevel >= 2) {
+               // Set joy level image
+               custs.customer1.joyLevel--;
+               document.querySelector("#customer1").src = `Images/Customers/${newCustomer}/${custs.customer1.joyLevel}.svg`;
             }
-            else {
-               hideObj("#customer1");
-               clearInterval(joyLoop);
-            }
+            else { clearUnhappyCustomer("customer1"); clearInterval(joyLoop); }
          }
-         else {
-            clearInterval(joyLoop);
-            if (customers.customer1.joyLevel === 6) { document.querySelector("#money1").src = `Images/Money/goldMoney.svg`; }
-            if (customers.customer1.joyLevel === 5) { document.querySelector("#money1").src = `Images/Money/silverMoney.svg`; }
-            if (customers.customer1.joyLevel === 4) { document.querySelector("#money1").src = `Images/Money/bronzeMoney.svg`; }
-            if (customers.customer1.joyLevel === 3) { document.querySelector("#money1").src = `Images/Money/goldCoin.svg`; }
-            if (customers.customer1.joyLevel === 2) { document.querySelector("#money1").src = `Images/Money/silverCoin.svg`; }
-            if (customers.customer1.joyLevel === 1) { document.querySelector("#money1").src = `Images/Money/bronzeCoin.svg`; }
-         }
-      }, 2500);
+         else { clearInterval(joyLoop); }
+      }, 3000); // 18 seconds
+   }
+   // Functions
+   function setDream(dreamBox, dream) {
+      showObj(dreamBox, true);
+      document.querySelector(dreamBox).src = `Images/Dreams/${dream}`;
+   }
+   function createOrder(customer) {
+      let order = [["plainBurger"], ["steak"], ["burgerBread"]];
+      return order[Math.floor(Math.random() * order.length)];
    }
 }
 
-function createOrder(customer) {
-   let order = [["steak", "burgerBread"], ["steak"], ["burgerBread"]];
-   return order[Math.floor(Math.random() * order.length)];
+// Money
+function checkMoney(num) {
+   if (custs[`customer${num}`]["joyLevel"] === 6) { document.querySelector(`#money${num}`).src = `Images/Money/goldMoney.svg`; }
+   if (custs[`customer${num}`]["joyLevel"] === 5) { document.querySelector(`#money${num}`).src = `Images/Money/silverMoney.svg`; }
+   if (custs[`customer${num}`]["joyLevel"] === 4) { document.querySelector(`#money${num}`).src = `Images/Money/bronzeMoney.svg`; }
+   if (custs[`customer${num}`]["joyLevel"] === 3) { document.querySelector(`#money${num}`).src = `Images/Money/goldCoin.svg`; }
+   if (custs[`customer${num}`]["joyLevel"] === 2) { document.querySelector(`#money${num}`).src = `Images/Money/silverCoin.svg`; }
+   if (custs[`customer${num}`]["joyLevel"] === 1) { document.querySelector(`#money${num}`).src = `Images/Money/bronzeCoin.svg`; }
+}
+function earnMoney(num) {
+   let path = document.querySelector(`#money${num}`).src;
+   // let moneyTypeWorking = path.replace("Images/Money/", "");
+   // let moneyType = moneyTypeWorking.replace(".svg", "");
+   let moneyType = path.substr(0, path.indexOf('Images/Money/'));
+
+   console.log(moneyType);
+   cashValues.money += [moneyType];
 }
 
+// Choose information for customers
 function choosePerson() {
    let person = ["b", "g", "p", "d"];
    return person[Math.floor(Math.random() * person.length)];
 }
+function chooseSpot(customer) {
+   if (!countertop.spot1) { return "spot1"; }
+   else if (!countertop.spot2) { return "spot2"; }
+   else if (!countertop.spot3) { return "spot3"; }
+   else if (!countertop.spot4) { return "spot4"; }
+   else if (!countertop.spot5) { return "spot5"; }
+   else { return "waiting"; }
+}
 
+// Clear customers
+function clearCustomer(customer, plate) {
+   plate.innerHTML = "";
+   plates[plate.id] = [];
+   custs[customer]["demands"] = "satiated";
+   showObj(`#money${customer.match(/(\d+)/)[0]}`);
+   checkMoney(customer.match(/(\d+)/)[0]);
+   clearUnhappyCustomer(customer, true);
+}
+function clearUnhappyCustomer(customer, ifTrue) {
+   custs[customer]["isHere"] = false;
+   custs[customer]["joyLevel"] = 6;
+   custs[customer]["spot"] = false;
+   countertop[`spot${customer.match(/(\d+)/)}`] = false;
+   hideObj(`#${customer}`);
+   hideObj(`#${customer}-demands`, true);
+   if (!ifTrue) { countertop[custs[customer]["spot"]] = false; }
+}
+
+// Helpful
 function fill(what, toDo) { what = toDo; }
 function editClass(toThis, remove, add) {
    toThis.classList.remove(remove);
    toThis.classList.add(add);
 }
-function hideObj(objId) {
+function hideObj(objId, parent) {
    document.querySelector(objId).style.opacity = "0";
    document.querySelector(objId).style.pointerEvents = "none";
+   if (parent) {
+      document.querySelector(objId).parentElement.style.opacity = "0";
+      document.querySelector(objId).parentElement.style.pointerEvents = "none";
+   }
 }
-function showObj(objId) {
+function showObj(objId, parent) {
    document.querySelector(objId).style.opacity = "1";
    document.querySelector(objId).style.pointerEvents = "auto";
+   if (parent) {
+      document.querySelector(objId).parentElement.style.opacity = "1";
+      document.querySelector(objId).parentElement.style.pointerEvents = "auto";
+   }
 }
 
-setInterval(() => {
-   time++;
-   if (time === 8) { createCustomer(); }
-}, 1000);
-
-// empty plate when trashed
-// show tooltip only when show person
-// fix infinite bread
 // time for cooking set like Vegetable Dash plants so if paused start adding time then when unpaused add to original time
 // level, with set customers and orders
 // bread and sauces
@@ -208,3 +292,4 @@ setInterval(() => {
 // burn steak
 // play/pause
 // walking customers
+// give money onclick, check type, pays up
