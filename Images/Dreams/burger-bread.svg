@@ -5,9 +5,9 @@
    inkscape:version="1.1 (c68e22c387, 2021-05-23)"
    id="svg5"
    version="1.1"
-   viewBox="0 0 125 125"
-   height="125mm"
-   width="125mm"
+   viewBox="0 0 110.662 110.662"
+   height="110.662mm"
+   width="110.662mm"
    sodipodi:docname="burger-bread.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -24,26 +24,26 @@
      inkscape:pagecheckerboard="false"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="1.32842"
-     inkscape:cx="241.265"
-     inkscape:cy="174.644"
+     inkscape:zoom="0.939335"
+     inkscape:cx="278.388"
+     inkscape:cy="117.104"
      inkscape:window-width="1920"
      inkscape:window-height="1047"
      inkscape:window-x="-9"
      inkscape:window-y="-9"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1"
-     fit-margin-top="12"
+     fit-margin-top="0"
      lock-margins="true"
-     fit-margin-left="12"
-     fit-margin-right="12"
-     fit-margin-bottom="12">
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0">
     <inkscape:grid
        type="axonomgrid"
        id="grid22761"
        spacingy="3"
-       originx="-121.78634"
-       originy="-0.50273468" />
+       originx="-128.956"
+       originy="-31.3821" />
   </sodipodi:namedview>
   <defs
      id="defs2">
@@ -14038,13 +14038,13 @@
   <g
      inkscape:label="Layer 1"
      id="layer1"
-     transform="translate(-121.786,-0.502735)">
+     transform="translate(-128.955,-31.3821)">
     <g
        id="g827"
        transform="matrix(0.637258,0,0,0.637258,99.0418,-36.1029)" />
     <g
        id="g12708"
-       transform="translate(17.5261,18.8794)">
+       transform="translate(17.5261,42.5898)">
       <ellipse
          style="fill:#e6e6e6;stroke-width:1.71751;stroke-linecap:round;stroke-linejoin:round"
          id="ellipse4246"

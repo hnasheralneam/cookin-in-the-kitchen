@@ -141,9 +141,9 @@ function createCustomer() {
       document.querySelector("#customer1").src = `Images/Customers/${newCustomer}/${customers.customer1.joyLevel}.svg`;
       showObj("#customer1");
       customers.customer1.demands = createOrder(customers.customer1);
-      if (customers.customer1.demands.includes("steak", "burgerBread")) { document.querySelector("#customer1-demands").src = "url('Images/Dreams/plain-burger.svg')"; }
-      else if (customers.customer1.demands.includes("burgerBread")) { document.querySelector("#customer1-demands").src = "url('Images/Dreams/burger-bread.svg')"; }
-      else if (customers.customer1.demands.includes("steak")) { document.querySelector("#customer1-demands").src = "url('Images/Dreams/steak.svg')"; }
+      if (customers.customer1.demands.includes("steak", "burgerBread")) { document.querySelector("#customer1-demands").src = "Images/Dreams/plain-burger.svg"; }
+      else if (customers.customer1.demands.includes("burgerBread")) { document.querySelector("#customer1-demands").src = "Images/Dreams/burger-bread.svg"; }
+      else if (customers.customer1.demands.includes("steak")) { document.querySelector("#customer1-demands").src = "Images/Dreams/steak.svg"; }
       let joyLoop = setInterval(() => {
          if (customers.customer1.demands !== "satiated") {
             if (customers.customer1.joyLevel >= 2) {
@@ -192,13 +192,14 @@ function showObj(objId) {
    document.querySelector(objId).style.pointerEvents = "auto";
 }
 
-createCustomer();
-
 setInterval(() => {
    time++;
    if (time === 8) { createCustomer(); }
 }, 1000);
 
+// empty plate when trashed
+// show tooltip only when show person
+// fix infinite bread
 // time for cooking set like Vegetable Dash plants so if paused start adding time then when unpaused add to original time
 // level, with set customers and orders
 // bread and sauces
