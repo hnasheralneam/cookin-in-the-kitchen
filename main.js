@@ -220,12 +220,11 @@ function checkMoney(num) {
 }
 function earnMoney(num) {
    let path = document.querySelector(`#money${num}`).src;
-   // let moneyTypeWorking = path.replace("Images/Money/", "");
-   // let moneyType = moneyTypeWorking.replace(".svg", "");
-   let moneyType = path.substr(0, path.indexOf('Images/Money/'));
-
-   console.log(moneyType);
-   cashValues.money += [moneyType];
+   let moneyTypeWorking = path.split("Images/Money/")[1];
+   let moneyType = moneyTypeWorking.replace(".svg", "");
+   cashValues.money += cashValues[moneyType];
+   hideObj(`#money${num}`);
+   countertop[`spot${num}`] = false;
 }
 
 // Choose information for customers
@@ -255,7 +254,6 @@ function clearUnhappyCustomer(customer, ifTrue) {
    custs[customer]["isHere"] = false;
    custs[customer]["joyLevel"] = 6;
    custs[customer]["spot"] = false;
-   countertop[`spot${customer.match(/(\d+)/)}`] = false;
    hideObj(`#${customer}`);
    hideObj(`#${customer}-demands`, true);
    if (!ifTrue) { countertop[custs[customer]["spot"]] = false; }
