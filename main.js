@@ -54,6 +54,7 @@ const cashValues = {
    goldMoney: 50
 }
 let time = 0;
+let waitingCustomers = 0;
 
 // Dropping
 function allowDrop(e) { e.preventDefault(); }
@@ -108,18 +109,7 @@ function drop(e) {
       }
    }
    // Customers
-   if (e.target.id.search("customer") !== -1 && incomer.classList.contains("plate")) {
-      // If customer1
-      if (e.target.id === "customer1") {
-         let returnValue;
-         for (i = 0; i < custs["customer1"]["demands"].length; i++) {
-            if (plates[incomer.id].includes(custs["customer1"]["demands"][i])) { returnValue = true; }
-            else { return false; }
-         }
-         // If you have what they want, you are done
-         if (returnValue) { clearCustomer("customer1", incomer); }
-      }
-   }
+   if (e.target.id.search("customer") !== -1 && incomer.classList.contains("plate")) { customer(); }
    // Trsh Cn
    if (e.target.id === "trsh-cn") {
       if (incomer.classList.contains("plate")) { incomer.innerHTML = ""; plates[incomer.id] = []; }
@@ -135,12 +125,26 @@ function drop(e) {
          plates[e.target.id] = [input];
       }
    }
+   function customer() {
+      let custNum = e.target.id.replace("customer", "");
+      let returnValue;
+      for (i = 0; i < custs[`customer${custNum}`]["demands"].length; i++) {
+         if (plates[incomer.id].includes(custs[`customer${custNum}`]["demands"][i])) { returnValue = true; }
+         else { return false; }
+      }
+      // If you have what they want, you are done
+      if (returnValue) { clearCustomer(`customer${custNum}`, incomer); }
+   }
 }
 
 // Time loop
 setInterval(() => {
    time++;
    if (time === 8) { createCustomer(); }
+   if (time === 14) { createCustomer(); createCustomer(); }
+   if (time === 18) { createCustomer(); }
+   if (time === 24) { createCustomer(); createCustomer(); createCustomer(); }
+   if (time === 34) { createCustomer(); }
    // Other stuff
    document.querySelector(".playerMoney").textContent = `${cashValues.money}$`;
 }, 1000);
@@ -172,33 +176,44 @@ function startCooking(inPan, whichSteak) {
 // Create customers
 function createCustomer() {
    if (!countertop.spot1) {
+      let custImg = doBasic(1);
+      let joyLoop = setInterval(() => { checkCustStatus(1, joyLoop, custImg); }, 3000); // 18 seconds
+   }
+   else if (!countertop.spot2) {
+      let custImg = doBasic(2);
+      let joyLoop = setInterval(() => { checkCustStatus(2, joyLoop, custImg); }, 3000);
+   }
+   else if (!countertop.spot3) {
+      let custImg = doBasic(3);
+      let joyLoop = setInterval(() => { checkCustStatus(3, joyLoop, custImg); }, 3000);
+   }
+   else if (!countertop.spot4) {
+      let custImg = doBasic(4);
+      let joyLoop = setInterval(() => { checkCustStatus(4, joyLoop, custImg); }, 3000);
+   }
+   else if (!countertop.spot5) {
+      let custImg = doBasic(5);
+      let joyLoop = setInterval(() => { checkCustStatus(5, joyLoop, custImg); }, 3000);
+   }
+   else { waitingCustomers++; }
+   // Functions
+   function doBasic(num) {
       // Choose a spot for the customer and set them as here
-      custs.customer1.isHere = true
-      custs.customer1.spot = chooseSpot("customer1");
-      countertop[custs.customer1.spot] = true;
+      custs[`customer${num}`]["isHere"] = true
+      custs[`customer${num}`]["spot"] = chooseSpot();
+      countertop[custs[`customer${num}`]["spot"]] = true;
       // Choose customer image and set it
       let newCustomer = choosePerson();
-      document.querySelector("#customer1").src = `Images/Customers/${newCustomer}/${custs.customer1.joyLevel}.svg`;
-      showObj("#customer1");
+      document.querySelector(`#customer${num}`).src = `Images/Customers/${newCustomer}/${custs[`customer${num}`]["joyLevel"]}.svg`;
+      showObj(`#customer${num}`);
       // Give them demands and display their dreams
-      custs.customer1.demands = createOrder(custs.customer1);
-      if (custs.customer1.demands.includes("plainBurger")) { setDream("#customer1-demands", "plain-burger.svg"); }
-      else if (custs.customer1.demands.includes("burgerBread")) { setDream("#customer1-demands", "burger-bread.svg"); }
-      else if (custs.customer1.demands.includes("steak")) { setDream("#customer1-demands", "steak.svg"); }
-      // Loop for joy
-      let joyLoop = setInterval(() => {
-         if (custs.customer1.demands !== "satiated") {
-            if (custs.customer1.joyLevel >= 2) {
-               // Set joy level image
-               custs.customer1.joyLevel--;
-               document.querySelector("#customer1").src = `Images/Customers/${newCustomer}/${custs.customer1.joyLevel}.svg`;
-            }
-            else { clearUnhappyCustomer("customer1"); clearInterval(joyLoop); }
-         }
-         else { clearInterval(joyLoop); }
-      }, 3000); // 18 seconds
+      custs[`customer${num}`]["demands"] = createOrder(custs[`customer${num}`]);
+      if (custs[`customer${num}`]["demands"].includes("plainBurger")) { setDream(`#customer${num}-demands`, "plain-burger.svg"); }
+      else if (custs[`customer${num}`]["demands"].includes("burgerBread")) { setDream(`#customer${num}-demands`, "burger-bread.svg"); }
+      else if (custs[`customer${num}`]["demands"].includes("steak")) { setDream(`#customer${num}-demands`, "steak.svg"); }
+      // Give back customer image
+      return newCustomer;
    }
-   // Functions
    function setDream(dreamBox, dream) {
       showObj(dreamBox, true);
       document.querySelector(dreamBox).src = `Images/Dreams/${dream}`;
@@ -206,6 +221,17 @@ function createCustomer() {
    function createOrder(customer) {
       let order = [["plainBurger"], ["steak"], ["burgerBread"]];
       return order[Math.floor(Math.random() * order.length)];
+   }
+   function checkCustStatus(num, theirLoop, img) {
+      if (custs[`customer${num}`]["demands"] !== "satiated") {
+         // Set joy level image
+         if (custs[`customer${num}`]["joyLevel"] >= 1) {
+            document.querySelector(`#customer${num}`).src = `Images/Customers/${img}/${custs[`customer${num}`]["joyLevel"]}.svg`;
+            custs[`customer${num}`]["joyLevel"]--;
+         }
+         else { clearUnhappyCustomer(`customer${num}`); clearInterval(theirLoop); }
+      }
+      else { clearInterval(theirLoop); }
    }
 }
 
@@ -225,6 +251,8 @@ function earnMoney(num) {
    cashValues.money += cashValues[moneyType];
    hideObj(`#money${num}`);
    countertop[`spot${num}`] = false;
+   // If there is a customer waiting
+   if (waitingCustomers > 0) { waitingCustomers -= 1; createCustomer(); }
 }
 
 // Choose information for customers
@@ -232,13 +260,12 @@ function choosePerson() {
    let person = ["b", "g", "p", "d"];
    return person[Math.floor(Math.random() * person.length)];
 }
-function chooseSpot(customer) {
+function chooseSpot() {
    if (!countertop.spot1) { return "spot1"; }
    else if (!countertop.spot2) { return "spot2"; }
    else if (!countertop.spot3) { return "spot3"; }
    else if (!countertop.spot4) { return "spot4"; }
    else if (!countertop.spot5) { return "spot5"; }
-   else { return "waiting"; }
 }
 
 // Clear customers
@@ -256,7 +283,11 @@ function clearUnhappyCustomer(customer, ifTrue) {
    custs[customer]["spot"] = false;
    hideObj(`#${customer}`);
    hideObj(`#${customer}-demands`, true);
-   if (!ifTrue) { countertop[custs[customer]["spot"]] = false; }
+   // Only if unhappy customer
+   if (!ifTrue) {
+      countertop[custs[customer]["spot"]] = false;
+      if (waitingCustomers > 0) { waitingCustomers -= 1; createCustomer(); }
+}
 }
 
 // Helpful
@@ -284,10 +315,10 @@ function showObj(objId, parent) {
 
 // time for cooking set like Vegetable Dash plants so if paused start adding time then when unpaused add to original time
 // level, with set customers and orders
-// bread and sauces
-// earn money
+// sauces and fries
 // pay for more plates/pans
 // burn steak
 // play/pause
 // walking customers
-// give money onclick, check type, pays up
+// no highlighting
+// option to click and place
