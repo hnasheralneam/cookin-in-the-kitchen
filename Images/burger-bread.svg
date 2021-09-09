@@ -8,7 +8,7 @@
    viewBox="0 0 90.74588 70.607551"
    height="70.607552mm"
    width="90.74588mm"
-   sodipodi:docname="food.svg"
+   sodipodi:docname="burger-bread.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -24,15 +24,15 @@
      inkscape:pagecheckerboard="false"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="0.33210381"
-     inkscape:cx="-362.83835"
-     inkscape:cy="638.35461"
+     inkscape:zoom="1.87866"
+     inkscape:cx="128.017"
+     inkscape:cy="186.303"
      inkscape:window-width="1920"
      inkscape:window-height="1047"
      inkscape:window-x="-9"
      inkscape:window-y="-9"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="g10621"
      fit-margin-top="12"
      lock-margins="true"
      fit-margin-left="12"
@@ -552,33 +552,6 @@
        apply_no_weight="true"
        apply_with_weight="true"
        only_selected="false" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient1601"
-       id="linearGradient1763"
-       x1="764.13885"
-       y1="287.07047"
-       x2="775.8385"
-       y2="199.327"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient1601"
-       id="linearGradient4427"
-       x1="203.40297"
-       y1="96.669174"
-       x2="204.18954"
-       y2="84.677078"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient2080"
-       id="linearGradient2082"
-       x1="202.27135"
-       y1="81.712608"
-       x2="202.17438"
-       y2="88.32637"
-       gradientUnits="userSpaceOnUse" />
     <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient1601"
@@ -14038,26 +14011,25 @@
   <g
      inkscape:label="Layer 1"
      id="layer1"
-     transform="translate(-121.78634,-0.50273463)">
+     transform="translate(-121.786,-0.502735)">
     <g
        id="g10621"
        inkscape:label="Burger Bread"
-       transform="translate(-35.490668,-39.997419)"
-       sodipodi:insensitive="true">
+       transform="translate(-35.4907,-39.9974)">
       <g
          id="g10675">
         <path
            id="path1875"
            style="opacity:1;fill:url(#linearGradient13245);fill-opacity:1;stroke:none;stroke-width:1.88976;stroke-linecap:round;stroke-linejoin:round"
-           d="m 765.92188,198.42578 c -127.65433,-5.8e-4 -147.29333,90.70808 -108.01533,90.70808 h 216.02902 c 39.278,0 19.639,-90.70866 -108.01369,-90.70808 z"
-           transform="scale(0.26458333)"
+           d="m 765.922,198.426 c -127.654,-10e-4 -147.293,90.708 -108.015,90.708 h 216.029 c 39.278,0 19.639,-90.709 -108.014,-90.708 z"
+           transform="scale(0.264583)"
            sodipodi:nodetypes="cccc" />
         <path
            style="fill:#c8ab37;fill-opacity:1;stroke:#c8ab37;stroke-width:0.265;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-           d="m 193.83309,61.698402 c 0.0205,-0.157986 0.0599,-0.313514 0.11703,-0.462206 0.0951,-0.158804 0.22311,-0.297793 0.37358,-0.405594 0.10446,-0.07484 0.21912,-0.134497 0.33668,-0.186394 0.11443,-0.05051 0.232,-0.09392 0.35181,-0.129871 l 0.14482,-0.0014 c -0.14269,0.351986 -0.34042,0.681593 -0.58382,0.973161 -0.14424,0.17279 -0.30442,0.33227 -0.47784,0.475755 l -0.27589,0.103984 v 0 c -0.007,-0.122551 -0.002,-0.245718 0.0136,-0.367435 z"
+           d="m 193.833,61.6984 c 0.02,-0.158 0.06,-0.3135 0.117,-0.4622 0.09,-0.1587 0.224,-0.2977 0.374,-0.4056 0.104,-0.075 0.219,-0.1345 0.336,-0.1864 0.114,-0.051 0.232,-0.094 0.352,-0.1299 h 0.145 c -0.143,0.352 -0.341,0.6816 -0.584,0.9732 -0.144,0.1728 -0.305,0.3323 -0.478,0.4758 l -0.276,0.1039 v 0 c 0,-0.123 0,-0.2466 0.01,-0.3688 z"
            id="path4168"
            inkscape:path-effect="#path-effect4170"
-           inkscape:original-d="m 193.83309,61.698402 c 0,0 0.008,-0.258866 0.11703,-0.462206 0.14384,-0.115636 0.26186,-0.259499 0.37358,-0.405594 0.0804,-0.107244 0.20675,-0.165775 0.33668,-0.186394 0.12308,-0.02394 0.25085,-0.05057 0.35181,-0.129871 0.0499,-0.02041 0.21727,-0.11996 0.14482,-0.0014 -0.17027,0.33814 -0.37745,0.656235 -0.58382,0.973161 -0.15772,0.23165 -0.28364,0.272471 -0.47784,0.475755 -0.0871,0.125624 -0.21877,0.179114 -0.27589,0.103984 -0.0698,-0.07783 0.0928,0.05157 0,0 z"
+           inkscape:original-d="m 193.833,61.6984 c 0,0 0,-0.2589 0.117,-0.4622 0.144,-0.1156 0.262,-0.2595 0.374,-0.4056 0.08,-0.1072 0.206,-0.1658 0.336,-0.1864 0.123,-0.024 0.251,-0.051 0.352,-0.1299 0.05,-0.02 0.217,-0.1199 0.145,0 -0.17,0.3382 -0.377,0.6563 -0.584,0.9732 -0.158,0.2316 -0.283,0.2725 -0.478,0.4758 -0.09,0.1256 -0.218,0.1791 -0.276,0.1039 -0.07,-0.078 0.09,0.052 0,0 z"
            sodipodi:nodetypes="ssssssssccs" />
         <use
            id="use13418"
@@ -14067,7 +14039,7 @@
            y="0"
            width="100%"
            height="100%"
-           transform="rotate(-5.8160245,178.24538,169.8894)" />
+           transform="rotate(-5.81602,178.245,169.889)" />
         <use
            id="use13420"
            inkscape:spray-origin="#path4168"
@@ -14076,7 +14048,7 @@
            y="0"
            width="100%"
            height="100%"
-           transform="rotate(26.905453,208.81693,65.229597)" />
+           transform="rotate(26.9055,208.817,65.2296)" />
         <use
            id="use13422"
            inkscape:spray-origin="#path4168"
@@ -14085,7 +14057,7 @@
            y="0"
            width="100%"
            height="100%"
-           transform="rotate(13.688027,223.74522,88.806807)" />
+           transform="rotate(13.688,223.745,88.8068)" />
         <use
            id="use13424"
            inkscape:spray-origin="#path4168"
@@ -14094,7 +14066,7 @@
            y="0"
            width="100%"
            height="100%"
-           transform="rotate(8.6026765,217.94822,124.15067)" />
+           transform="rotate(8.60268,217.948,124.151)" />
         <use
            id="use13426"
            inkscape:spray-origin="#path4168"
@@ -14103,7 +14075,7 @@
            y="0"
            width="100%"
            height="100%"
-           transform="rotate(3.52854,190.51489,298.84674)" />
+           transform="rotate(3.52854,190.515,298.847)" />
         <use
            id="use13428"
            inkscape:spray-origin="#path4168"
@@ -14112,7 +14084,7 @@
            y="0"
            width="100%"
            height="100%"
-           transform="rotate(-11.599721,193.93413,-36.71108)" />
+           transform="rotate(-11.5997,193.934,-36.7111)" />
         <use
            id="use13430"
            inkscape:spray-origin="#path4168"
@@ -14121,7 +14093,7 @@
            y="0"
            width="100%"
            height="100%"
-           transform="rotate(-13.230741,200.55458,-42.943607)" />
+           transform="rotate(-13.2307,200.555,-42.9436)" />
         <use
            id="use13432"
            inkscape:spray-origin="#path4168"
@@ -14130,7 +14102,7 @@
            y="0"
            width="100%"
            height="100%"
-           transform="rotate(24.651907,206.72566,120.90197)" />
+           transform="rotate(24.6519,206.726,120.902)" />
         <use
            id="use13434"
            inkscape:spray-origin="#path4168"
@@ -14139,7 +14111,7 @@
            y="0"
            width="100%"
            height="100%"
-           transform="rotate(10.489294,188.69331,219.72697)" />
+           transform="rotate(10.4893,188.693,219.727)" />
         <use
            id="use13436"
            inkscape:spray-origin="#path4168"
@@ -14148,7 +14120,7 @@
            y="0"
            width="100%"
            height="100%"
-           transform="rotate(-21.67295,224.73153,-12.394559)" />
+           transform="rotate(-21.673,224.732,-12.3946)" />
         <use
            id="use13438"
            inkscape:spray-origin="#path4168"
@@ -14157,7 +14129,7 @@
            y="0"
            width="100%"
            height="100%"
-           transform="rotate(8.927361,154.22367,245.2165)" />
+           transform="rotate(8.92736,154.224,245.217)" />
         <use
            id="use13440"
            inkscape:spray-origin="#path4168"
@@ -14166,7 +14138,7 @@
            y="0"
            width="100%"
            height="100%"
-           transform="rotate(27.127079,185.92872,118.5166)" />
+           transform="rotate(27.1271,185.929,118.517)" />
         <use
            id="use13442"
            inkscape:spray-origin="#path4168"
@@ -14175,7 +14147,7 @@
            y="0"
            width="100%"
            height="100%"
-           transform="rotate(18.740716,185.32425,132.09069)" />
+           transform="rotate(18.7407,185.324,132.091)" />
         <use
            id="use13444"
            inkscape:spray-origin="#path4168"
@@ -14184,7 +14156,7 @@
            y="0"
            width="100%"
            height="100%"
-           transform="rotate(2.4911759,1.9994906,442.21119)" />
+           transform="rotate(2.49118,1.99949,442.211)" />
         <use
            id="use13446"
            inkscape:spray-origin="#path4168"
@@ -14193,7 +14165,7 @@
            y="0"
            width="100%"
            height="100%"
-           transform="rotate(30.048189,190.99132,85.51901)" />
+           transform="rotate(30.0482,190.991,85.519)" />
         <use
            id="use13448"
            inkscape:spray-origin="#path4168"
@@ -14202,7 +14174,7 @@
            y="0"
            width="100%"
            height="100%"
-           transform="rotate(-7.9984823,232.35673,-9.2448837)" />
+           transform="rotate(-7.99848,232.357,-9.24488)" />
         <use
            id="use13450"
            inkscape:spray-origin="#path4168"
@@ -14211,7 +14183,7 @@
            y="0"
            width="100%"
            height="100%"
-           transform="rotate(-23.19033,205.38789,39.708396)" />
+           transform="rotate(-23.1903,205.388,39.7084)" />
         <use
            id="use1459"
            inkscape:spray-origin="#path4168"
@@ -14220,7 +14192,7 @@
            y="0"
            width="100%"
            height="100%"
-           transform="rotate(34.952409,167.0826,52.116396)" />
+           transform="rotate(34.9524,167.083,52.1164)" />
         <use
            id="use1461"
            inkscape:spray-origin="#path4168"
@@ -14229,7 +14201,7 @@
            y="0"
            width="100%"
            height="100%"
-           transform="rotate(59.406754,185.89781,64.467668)" />
+           transform="rotate(59.4068,185.898,64.4677)" />
         <use
            id="use1463"
            inkscape:spray-origin="#path4168"
@@ -14238,7 +14210,7 @@
            y="0"
            width="100%"
            height="100%"
-           transform="rotate(75.783306,184.91092,63.0021)" />
+           transform="rotate(75.7833,184.911,63.0021)" />
         <use
            id="use1465"
            inkscape:spray-origin="#path4168"
@@ -14247,7 +14219,7 @@
            y="0"
            width="100%"
            height="100%"
-           transform="rotate(24.797345,187.83504,76.22159)" />
+           transform="rotate(24.7973,187.835,76.2216)" />
         <use
            id="use1467"
            inkscape:spray-origin="#path4168"
@@ -14256,7 +14228,7 @@
            y="0"
            width="100%"
            height="100%"
-           transform="rotate(7.5312105,163.99987,123.84822)" />
+           transform="rotate(7.53121,164,123.848)" />
         <use
            id="use1469"
            inkscape:spray-origin="#path4168"
@@ -14265,7 +14237,7 @@
            y="0"
            width="100%"
            height="100%"
-           transform="rotate(45.601389,183.3724,76.71307)" />
+           transform="rotate(45.6014,183.372,76.7131)" />
         <use
            id="use1471"
            inkscape:spray-origin="#path4168"
@@ -14274,7 +14246,7 @@
            y="0"
            width="100%"
            height="100%"
-           transform="rotate(29.876496,180.1105,90.477278)" />
+           transform="rotate(29.8765,180.111,90.4773)" />
         <use
            id="use1473"
            inkscape:spray-origin="#path4168"
@@ -14283,7 +14255,7 @@
            y="0"
            width="100%"
            height="100%"
-           transform="rotate(-50.00595,198.11393,49.028003)" />
+           transform="rotate(-50.006,198.114,49.028)" />
         <use
            id="use1475"
            inkscape:spray-origin="#path4168"
@@ -14292,7 +14264,7 @@
            y="0"
            width="100%"
            height="100%"
-           transform="rotate(-100.43952,193.73207,58.606278)" />
+           transform="rotate(-100.44,193.732,58.6063)" />
         <use
            id="use1477"
            inkscape:spray-origin="#path4168"
@@ -14301,7 +14273,7 @@
            y="0"
            width="100%"
            height="100%"
-           transform="rotate(-104.65966,188.87693,61.069157)" />
+           transform="rotate(-104.66,188.877,61.0692)" />
         <use
            id="use1479"
            inkscape:spray-origin="#path4168"
@@ -14310,7 +14282,7 @@
            y="0"
            width="100%"
            height="100%"
-           transform="rotate(79.061783,180.6609,64.002587)" />
+           transform="rotate(79.0618,180.661,64.0026)" />
         <use
            id="use1481"
            inkscape:spray-origin="#path4168"
@@ -14319,7 +14291,7 @@
            y="0"
            width="100%"
            height="100%"
-           transform="rotate(-7.0875301,216.9347,66.295065)" />
+           transform="rotate(-7.08753,216.935,66.2951)" />
         <use
            id="use1483"
            inkscape:spray-origin="#path4168"
@@ -14328,7 +14300,7 @@
            y="0"
            width="100%"
            height="100%"
-           transform="rotate(-100.50981,183.34568,59.520079)" />
+           transform="rotate(-100.51,183.346,59.5201)" />
         <use
            id="use1485"
            inkscape:spray-origin="#path4168"
@@ -14337,7 +14309,7 @@
            y="0"
            width="100%"
            height="100%"
-           transform="rotate(4.2426804,197.56602,218.62615)" />
+           transform="rotate(4.24268,197.566,218.626)" />
         <use
            id="use1487"
            inkscape:spray-origin="#path4168"
@@ -14346,7 +14318,7 @@
            y="0"
            width="100%"
            height="100%"
-           transform="rotate(-106.71815,193.64989,52.071254)" />
+           transform="rotate(-106.718,193.65,52.0713)" />
         <use
            id="use1489"
            inkscape:spray-origin="#path4168"
@@ -14355,7 +14327,7 @@
            y="0"
            width="100%"
            height="100%"
-           transform="rotate(67.467963,198.99374,79.971823)" />
+           transform="rotate(67.468,198.994,79.9718)" />
         <use
            id="use1491"
            inkscape:spray-origin="#path4168"
@@ -14364,7 +14336,7 @@
            y="0"
            width="100%"
            height="100%"
-           transform="rotate(46.804422,200.61741,95.894921)" />
+           transform="rotate(46.8044,200.617,95.8949)" />
         <use
            id="use1493"
            inkscape:spray-origin="#path4168"
@@ -14373,7 +14345,7 @@
            y="0"
            width="100%"
            height="100%"
-           transform="rotate(-44.759803,203.96794,20.124505)" />
+           transform="rotate(-44.7598,203.968,20.1245)" />
         <use
            id="use1495"
            inkscape:spray-origin="#path4168"
@@ -14382,7 +14354,7 @@
            y="0"
            width="100%"
            height="100%"
-           transform="rotate(38.132478,194.11222,115.92908)" />
+           transform="rotate(38.1325,194.112,115.929)" />
         <use
            id="use1497"
            inkscape:spray-origin="#path4168"
@@ -14391,7 +14363,7 @@
            y="0"
            width="100%"
            height="100%"
-           transform="rotate(-80.549192,204.70529,41.779796)" />
+           transform="rotate(-80.5492,204.705,41.7798)" />
         <use
            id="use1499"
            inkscape:spray-origin="#path4168"
@@ -14400,7 +14372,7 @@
            y="0"
            width="100%"
            height="100%"
-           transform="rotate(22.347021,179.9055,134.07923)" />
+           transform="rotate(22.347,179.906,134.079)" />
         <use
            id="use1501"
            inkscape:spray-origin="#path4168"
@@ -14409,7 +14381,7 @@
            y="0"
            width="100%"
            height="100%"
-           transform="rotate(-7.0970313,256.92036,-75.651609)" />
+           transform="rotate(-7.09703,256.92,-75.6516)" />
         <use
            id="use1503"
            inkscape:spray-origin="#path4168"
@@ -14418,7 +14390,7 @@
            y="0"
            width="100%"
            height="100%"
-           transform="rotate(-32.27572,203.87044,47.102776)" />
+           transform="rotate(-32.2757,203.87,47.1028)" />
         <use
            id="use1505"
            inkscape:spray-origin="#path4168"
@@ -14427,7 +14399,7 @@
            y="0"
            width="100%"
            height="100%"
-           transform="rotate(18.77939,159.71908,62.572375)" />
+           transform="rotate(18.7794,159.719,62.5724)" />
         <use
            id="use1507"
            inkscape:spray-origin="#path4168"
@@ -14436,7 +14408,7 @@
            y="0"
            width="100%"
            height="100%"
-           transform="rotate(-64.682848,189.46615,66.22088)" />
+           transform="rotate(-64.6828,189.466,66.2209)" />
         <use
            id="use1509"
            inkscape:spray-origin="#path4168"
@@ -14445,7 +14417,7 @@
            y="0"
            width="100%"
            height="100%"
-           transform="rotate(48.257669,181.12429,66.130579)" />
+           transform="rotate(48.2577,181.124,66.1306)" />
         <use
            id="use1511"
            inkscape:spray-origin="#path4168"
@@ -14454,7 +14426,7 @@
            y="0"
            width="100%"
            height="100%"
-           transform="rotate(25.136437,184.18866,96.035237)" />
+           transform="rotate(25.1364,184.189,96.0352)" />
         <use
            id="use1513"
            inkscape:spray-origin="#path4168"
@@ -14463,7 +14435,7 @@
            y="0"
            width="100%"
            height="100%"
-           transform="rotate(61.239317,191.85532,72.574245)" />
+           transform="rotate(61.2393,191.855,72.5742)" />
         <use
            id="use1515"
            inkscape:spray-origin="#path4168"
@@ -14472,461 +14444,19 @@
            y="0"
            width="100%"
            height="100%"
-           transform="rotate(-77.593917,193.11869,47.870391)" />
+           transform="rotate(-77.5939,193.119,47.8704)" />
       </g>
       <g
          id="g10625">
         <path
            id="path1368"
            style="opacity:1;fill:url(#linearGradient13247);fill-opacity:1;stroke:none;stroke-width:0.499999;stroke-linecap:round;stroke-linejoin:round"
-           d="M 184.46341,97.5 C 171.7013,96.031675 166.27687,85.499973 171.47303,84 c 0,0 10.31538,4.3187 31.85443,3.805183 C 224.86651,87.291666 233.82686,84 233.82686,84 c 4.81716,1.390569 0.50035,11.016112 -12.99038,13.5 -17.54025,2.65552 -24.16827,1.563197 -36.37307,0 z"
+           d="m 184.463,97.5 c -12.762,-1.4683 -18.186,-12 -12.99,-13.5 0,0 10.315,4.3187 31.854,3.8052 21.54,-0.5135 30.5,-3.8052 30.5,-3.8052 4.817,1.3906 0.5,11.0161 -12.991,13.5 -17.54,2.656 -24.168,1.5632 -36.373,0 z"
            sodipodi:nodetypes="cczccc" />
         <path
            style="opacity:1;fill:url(#linearGradient13249);fill-opacity:1;stroke-width:0.147451;stroke-linecap:round;stroke-linejoin:round"
-           d="m 202.27134,81.712605 c -4.64642,-0.0083 -9.29289,0.122342 -13.92677,0.4732 -5.66585,0.399777 -11.3306,1.004625 -16.93191,1.914669 0.0849,0.208408 0.50477,0.180025 0.68215,0.299467 6.32357,1.984525 12.94575,2.816462 19.53817,3.265511 4.55856,0.28658 9.13128,0.226985 13.6954,0.141257 8.27644,-0.317028 16.58325,-0.928402 24.69626,-2.669982 1.26092,-0.314268 2.57052,-0.525246 3.77927,-1.000745 -0.3989,-0.21487 -0.95875,-0.17872 -1.41061,-0.283126 -9.9708,-1.442981 -20.04448,-2.219306 -30.12196,-2.140251 z"
+           d="m 202.271,81.7126 c -4.646,-0.01 -9.293,0.1223 -13.926,0.4732 -5.666,0.3998 -11.331,1.0046 -16.932,1.9147 0.08,0.2084 0.504,0.18 0.682,0.2994 6.323,1.9846 12.946,2.8165 19.538,3.2656 4.559,0.2865 9.131,0.2269 13.695,0.1412 8.277,-0.317 16.584,-0.9284 24.697,-2.67 1.261,-0.3142 2.57,-0.5252 3.779,-1.0007 -0.399,-0.2149 -0.959,-0.1787 -1.411,-0.2831 -9.97,-1.443 -20.044,-2.2193 -30.122,-2.1403 z"
            id="path1829" />
-      </g>
-      <g
-         id="g13454">
-        <path
-           id="path13324"
-           style="opacity:1;fill:url(#linearGradient1763);fill-opacity:1;stroke:none;stroke-width:1.88976;stroke-linecap:round;stroke-linejoin:round"
-           d="m 765.92188,198.42578 c -127.65433,-5.8e-4 -147.29333,90.70808 -108.01533,90.70808 h 216.02902 c 39.278,0 19.639,-90.70866 -108.01369,-90.70808 z"
-           transform="scale(0.26458333)"
-           sodipodi:nodetypes="cccc" />
-        <path
-           style="fill:#c8ab37;fill-opacity:1;stroke:#c8ab37;stroke-width:0.265;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-           d="m 193.83309,61.698402 c 0.0205,-0.157986 0.0599,-0.313514 0.11703,-0.462206 0.0951,-0.158804 0.22311,-0.297793 0.37358,-0.405594 0.10446,-0.07484 0.21912,-0.134497 0.33668,-0.186394 0.11443,-0.05051 0.232,-0.09392 0.35181,-0.129871 l 0.14482,-0.0014 c -0.14269,0.351986 -0.34042,0.681593 -0.58382,0.973161 -0.14424,0.17279 -0.30442,0.33227 -0.47784,0.475755 l -0.27589,0.103984 v 0 c -0.007,-0.122551 -0.002,-0.245718 0.0136,-0.367435 z"
-           id="path13326"
-           inkscape:path-effect="#path-effect13458"
-           inkscape:original-d="m 193.83309,61.698402 c 0,0 0.008,-0.258866 0.11703,-0.462206 0.14384,-0.115636 0.26186,-0.259499 0.37358,-0.405594 0.0804,-0.107244 0.20675,-0.165775 0.33668,-0.186394 0.12308,-0.02394 0.25085,-0.05057 0.35181,-0.129871 0.0499,-0.02041 0.21727,-0.11996 0.14482,-0.0014 -0.17027,0.33814 -0.37745,0.656235 -0.58382,0.973161 -0.15772,0.23165 -0.28364,0.272471 -0.47784,0.475755 -0.0871,0.125624 -0.21877,0.179114 -0.27589,0.103984 -0.0698,-0.07783 0.0928,0.05157 0,0 z"
-           sodipodi:nodetypes="ssssssssccs" />
-        <use
-           id="use13328"
-           inkscape:spray-origin="#path4168"
-           xlink:href="#path4168"
-           x="0"
-           y="0"
-           width="100%"
-           height="100%"
-           transform="rotate(-5.8160245,178.24538,169.8894)" />
-        <use
-           id="use13330"
-           inkscape:spray-origin="#path4168"
-           xlink:href="#path4168"
-           x="0"
-           y="0"
-           width="100%"
-           height="100%"
-           transform="rotate(26.905453,208.81693,65.229597)" />
-        <use
-           id="use13332"
-           inkscape:spray-origin="#path4168"
-           xlink:href="#path4168"
-           x="0"
-           y="0"
-           width="100%"
-           height="100%"
-           transform="rotate(13.688027,223.74522,88.806807)" />
-        <use
-           id="use13334"
-           inkscape:spray-origin="#path4168"
-           xlink:href="#path4168"
-           x="0"
-           y="0"
-           width="100%"
-           height="100%"
-           transform="rotate(8.6026765,217.94822,124.15067)" />
-        <use
-           id="use13336"
-           inkscape:spray-origin="#path4168"
-           xlink:href="#path4168"
-           x="0"
-           y="0"
-           width="100%"
-           height="100%"
-           transform="rotate(3.52854,190.51489,298.84674)" />
-        <use
-           id="use13338"
-           inkscape:spray-origin="#path4168"
-           xlink:href="#path4168"
-           x="0"
-           y="0"
-           width="100%"
-           height="100%"
-           transform="rotate(-11.599721,193.93413,-36.71108)" />
-        <use
-           id="use13340"
-           inkscape:spray-origin="#path4168"
-           xlink:href="#path4168"
-           x="0"
-           y="0"
-           width="100%"
-           height="100%"
-           transform="rotate(-13.230741,200.55458,-42.943607)" />
-        <use
-           id="use13342"
-           inkscape:spray-origin="#path4168"
-           xlink:href="#path4168"
-           x="0"
-           y="0"
-           width="100%"
-           height="100%"
-           transform="rotate(24.651907,206.72566,120.90197)" />
-        <use
-           id="use13344"
-           inkscape:spray-origin="#path4168"
-           xlink:href="#path4168"
-           x="0"
-           y="0"
-           width="100%"
-           height="100%"
-           transform="rotate(10.489294,188.69331,219.72697)" />
-        <use
-           id="use13346"
-           inkscape:spray-origin="#path4168"
-           xlink:href="#path4168"
-           x="0"
-           y="0"
-           width="100%"
-           height="100%"
-           transform="rotate(-21.67295,224.73153,-12.394559)" />
-        <use
-           id="use13348"
-           inkscape:spray-origin="#path4168"
-           xlink:href="#path4168"
-           x="0"
-           y="0"
-           width="100%"
-           height="100%"
-           transform="rotate(8.927361,154.22367,245.2165)" />
-        <use
-           id="use13350"
-           inkscape:spray-origin="#path4168"
-           xlink:href="#path4168"
-           x="0"
-           y="0"
-           width="100%"
-           height="100%"
-           transform="rotate(27.127079,185.92872,118.5166)" />
-        <use
-           id="use13352"
-           inkscape:spray-origin="#path4168"
-           xlink:href="#path4168"
-           x="0"
-           y="0"
-           width="100%"
-           height="100%"
-           transform="rotate(18.740716,185.32425,132.09069)" />
-        <use
-           id="use13354"
-           inkscape:spray-origin="#path4168"
-           xlink:href="#path4168"
-           x="0"
-           y="0"
-           width="100%"
-           height="100%"
-           transform="rotate(2.4911759,1.9994906,442.21119)" />
-        <use
-           id="use13356"
-           inkscape:spray-origin="#path4168"
-           xlink:href="#path4168"
-           x="0"
-           y="0"
-           width="100%"
-           height="100%"
-           transform="rotate(30.048189,190.99132,85.51901)" />
-        <use
-           id="use13358"
-           inkscape:spray-origin="#path4168"
-           xlink:href="#path4168"
-           x="0"
-           y="0"
-           width="100%"
-           height="100%"
-           transform="rotate(-7.9984823,232.35673,-9.2448837)" />
-        <use
-           id="use13360"
-           inkscape:spray-origin="#path4168"
-           xlink:href="#path4168"
-           x="0"
-           y="0"
-           width="100%"
-           height="100%"
-           transform="rotate(-23.19033,205.38789,39.708396)" />
-        <use
-           id="use13362"
-           inkscape:spray-origin="#path4168"
-           xlink:href="#use13418"
-           x="0"
-           y="0"
-           width="100%"
-           height="100%"
-           transform="rotate(34.952409,167.0826,52.116396)" />
-        <use
-           id="use13364"
-           inkscape:spray-origin="#path4168"
-           xlink:href="#use13418"
-           x="0"
-           y="0"
-           width="100%"
-           height="100%"
-           transform="rotate(59.406754,185.89781,64.467668)" />
-        <use
-           id="use13366"
-           inkscape:spray-origin="#path4168"
-           xlink:href="#use13418"
-           x="0"
-           y="0"
-           width="100%"
-           height="100%"
-           transform="rotate(75.783306,184.91092,63.0021)" />
-        <use
-           id="use13368"
-           inkscape:spray-origin="#path4168"
-           xlink:href="#use13418"
-           x="0"
-           y="0"
-           width="100%"
-           height="100%"
-           transform="rotate(24.797345,187.83504,76.22159)" />
-        <use
-           id="use13370"
-           inkscape:spray-origin="#path4168"
-           xlink:href="#use13418"
-           x="0"
-           y="0"
-           width="100%"
-           height="100%"
-           transform="rotate(7.5312105,163.99987,123.84822)" />
-        <use
-           id="use13372"
-           inkscape:spray-origin="#path4168"
-           xlink:href="#use13418"
-           x="0"
-           y="0"
-           width="100%"
-           height="100%"
-           transform="rotate(45.601389,183.3724,76.71307)" />
-        <use
-           id="use13374"
-           inkscape:spray-origin="#path4168"
-           xlink:href="#use13418"
-           x="0"
-           y="0"
-           width="100%"
-           height="100%"
-           transform="rotate(29.876496,180.1105,90.477278)" />
-        <use
-           id="use13376"
-           inkscape:spray-origin="#path4168"
-           xlink:href="#use13418"
-           x="0"
-           y="0"
-           width="100%"
-           height="100%"
-           transform="rotate(-50.00595,198.11393,49.028003)" />
-        <use
-           id="use13378"
-           inkscape:spray-origin="#path4168"
-           xlink:href="#use13418"
-           x="0"
-           y="0"
-           width="100%"
-           height="100%"
-           transform="rotate(-100.43952,193.73207,58.606278)" />
-        <use
-           id="use13380"
-           inkscape:spray-origin="#path4168"
-           xlink:href="#use13418"
-           x="0"
-           y="0"
-           width="100%"
-           height="100%"
-           transform="rotate(-104.65966,188.87693,61.069157)" />
-        <use
-           id="use13382"
-           inkscape:spray-origin="#path4168"
-           xlink:href="#use13418"
-           x="0"
-           y="0"
-           width="100%"
-           height="100%"
-           transform="rotate(79.061783,180.6609,64.002587)" />
-        <use
-           id="use13384"
-           inkscape:spray-origin="#path4168"
-           xlink:href="#use13418"
-           x="0"
-           y="0"
-           width="100%"
-           height="100%"
-           transform="rotate(-7.0875301,216.9347,66.295065)" />
-        <use
-           id="use13386"
-           inkscape:spray-origin="#path4168"
-           xlink:href="#use13418"
-           x="0"
-           y="0"
-           width="100%"
-           height="100%"
-           transform="rotate(-100.50981,183.34568,59.520079)" />
-        <use
-           id="use13388"
-           inkscape:spray-origin="#path4168"
-           xlink:href="#use13418"
-           x="0"
-           y="0"
-           width="100%"
-           height="100%"
-           transform="rotate(4.2426804,197.56602,218.62615)" />
-        <use
-           id="use13390"
-           inkscape:spray-origin="#path4168"
-           xlink:href="#use13418"
-           x="0"
-           y="0"
-           width="100%"
-           height="100%"
-           transform="rotate(-106.71815,193.64989,52.071254)" />
-        <use
-           id="use13392"
-           inkscape:spray-origin="#path4168"
-           xlink:href="#use13418"
-           x="0"
-           y="0"
-           width="100%"
-           height="100%"
-           transform="rotate(67.467963,198.99374,79.971823)" />
-        <use
-           id="use13394"
-           inkscape:spray-origin="#path4168"
-           xlink:href="#use13418"
-           x="0"
-           y="0"
-           width="100%"
-           height="100%"
-           transform="rotate(46.804422,200.61741,95.894921)" />
-        <use
-           id="use13396"
-           inkscape:spray-origin="#path4168"
-           xlink:href="#use13418"
-           x="0"
-           y="0"
-           width="100%"
-           height="100%"
-           transform="rotate(-44.759803,203.96794,20.124505)" />
-        <use
-           id="use13398"
-           inkscape:spray-origin="#path4168"
-           xlink:href="#use13418"
-           x="0"
-           y="0"
-           width="100%"
-           height="100%"
-           transform="rotate(38.132478,194.11222,115.92908)" />
-        <use
-           id="use13400"
-           inkscape:spray-origin="#path4168"
-           xlink:href="#use13418"
-           x="0"
-           y="0"
-           width="100%"
-           height="100%"
-           transform="rotate(-80.549192,204.70529,41.779796)" />
-        <use
-           id="use13402"
-           inkscape:spray-origin="#path4168"
-           xlink:href="#use13418"
-           x="0"
-           y="0"
-           width="100%"
-           height="100%"
-           transform="rotate(22.347021,179.9055,134.07923)" />
-        <use
-           id="use13404"
-           inkscape:spray-origin="#path4168"
-           xlink:href="#use13418"
-           x="0"
-           y="0"
-           width="100%"
-           height="100%"
-           transform="rotate(-7.0970313,256.92036,-75.651609)" />
-        <use
-           id="use13406"
-           inkscape:spray-origin="#path4168"
-           xlink:href="#use13418"
-           x="0"
-           y="0"
-           width="100%"
-           height="100%"
-           transform="rotate(-32.27572,203.87044,47.102776)" />
-        <use
-           id="use13408"
-           inkscape:spray-origin="#path4168"
-           xlink:href="#use13418"
-           x="0"
-           y="0"
-           width="100%"
-           height="100%"
-           transform="rotate(18.77939,159.71908,62.572375)" />
-        <use
-           id="use13410"
-           inkscape:spray-origin="#path4168"
-           xlink:href="#use13418"
-           x="0"
-           y="0"
-           width="100%"
-           height="100%"
-           transform="rotate(-64.682848,189.46615,66.22088)" />
-        <use
-           id="use13412"
-           inkscape:spray-origin="#path4168"
-           xlink:href="#use13418"
-           x="0"
-           y="0"
-           width="100%"
-           height="100%"
-           transform="rotate(48.257669,181.12429,66.130579)" />
-        <use
-           id="use13414"
-           inkscape:spray-origin="#path4168"
-           xlink:href="#use13418"
-           x="0"
-           y="0"
-           width="100%"
-           height="100%"
-           transform="rotate(25.136437,184.18866,96.035237)" />
-        <use
-           id="use13416"
-           inkscape:spray-origin="#path4168"
-           xlink:href="#use13418"
-           x="0"
-           y="0"
-           width="100%"
-           height="100%"
-           transform="rotate(61.239317,191.85532,72.574245)" />
-        <use
-           id="use13452"
-           inkscape:spray-origin="#path4168"
-           xlink:href="#use13418"
-           x="0"
-           y="0"
-           width="100%"
-           height="100%"
-           transform="rotate(-77.593917,193.11869,47.870391)" />
-      </g>
-      <g
-         id="g13464">
-        <path
-           id="path13460"
-           style="opacity:1;fill:url(#linearGradient4427);fill-opacity:1;stroke:none;stroke-width:0.499999;stroke-linecap:round;stroke-linejoin:round"
-           d="M 184.46341,97.5 C 171.7013,96.031675 166.27687,85.499973 171.47303,84 c 0,0 10.31538,4.3187 31.85443,3.805183 C 224.86651,87.291666 233.82686,84 233.82686,84 c 4.81716,1.390569 0.50035,11.016112 -12.99038,13.5 -17.54025,2.65552 -24.16827,1.563197 -36.37307,0 z"
-           sodipodi:nodetypes="cczccc" />
-        <path
-           style="opacity:1;fill:url(#linearGradient2082);fill-opacity:1;stroke-width:0.147451;stroke-linecap:round;stroke-linejoin:round"
-           d="m 202.27134,81.712605 c -4.64642,-0.0083 -9.29289,0.122342 -13.92677,0.4732 -5.66585,0.399777 -11.3306,1.004625 -16.93191,1.914669 0.0849,0.208408 0.50477,0.180025 0.68215,0.299467 6.32357,1.984525 12.94575,2.816462 19.53817,3.265511 4.55856,0.28658 9.13128,0.226985 13.6954,0.141257 8.27644,-0.317028 16.58325,-0.928402 24.69626,-2.669982 1.26092,-0.314268 2.57052,-0.525246 3.77927,-1.000745 -0.3989,-0.21487 -0.95875,-0.17872 -1.41061,-0.283126 -9.9708,-1.442981 -20.04448,-2.219306 -30.12196,-2.140251 z"
-           id="path13462" />
       </g>
     </g>
   </g>
