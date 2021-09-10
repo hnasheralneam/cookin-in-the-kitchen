@@ -60,6 +60,13 @@
    <img id="burgerBread" data-foodtype="burgerBread" draggable="true" ondragstart="drag(event)" class="burger-bread-template" src="Images/burger-bread.svg">
    <!-- Money -->
    <span class="playerMoney" title="MONEY">0$</span>
+   <!-- Settings -->
+   <img class="settingsImg" onclick="showObj('.settingShadow'); pause();" src="Images/settings.svg">
+   <div class="shadow settingShadow">
+      <div class="modalContent settings">
+         <span onclick="hideObj('.settingShadow'); pause();" class="closeModal">X</span>
+      </div>
+   </div>
 </body>
 <script src="main.js" charset="utf-8"></script>
 </html>

@@ -7,6 +7,8 @@ body {
    overflow: hidden;
 }
 
+::selection { display: none;}
+
 #pan1 {
    height: 10vh;
    width: 25vh;
@@ -234,3 +236,54 @@ body {
 .cutomer-demands {
    width: 6vw;
 }
+
+.settingsImg {
+   position: absolute;
+   top: 0;
+   right: .5vw;
+   width: 5vw;
+}
+
+.shadow {
+   opacity: 0;
+   pointer-events: none;
+   position: fixed;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(25, 0, 0, 0.5);
+   backdrop-filter: blur(.15vh);
+   overflow: auto;
+   transition: 0.8s;
+   box-sizing: border-box;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.modalContent {
+   height: 80%;
+   width: 90%;
+   border-radius: 1vh;
+   margin: 5vh;
+   padding: 8vh 0;
+   background-color: #ffc400;
+   border: solid 2vh #cfa108;
+   text-align: center;
+   font-size: 8vh;
+   font-family: "Nunito";
+   transition: 0.8s;
+   position: relative;
+   box-sizing: border-box;
+}
+
+.closeModal {
+   position: absolute;
+   top: 3vh;
+   right: 5vh;
+   transition: .5s;
+   color: #a78000;
+}
+
+.closeModal:hover { text-shadow: 0 0 .25vh #594500; }

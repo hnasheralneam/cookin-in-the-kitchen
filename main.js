@@ -53,8 +53,12 @@ const cashValues = {
    silverMoney: 45,
    goldMoney: 50
 }
-let time = 0;
+const TIME = {
+   timePaused: 0,
+   lvlTime: 0,
+}
 let waitingCustomers = 0;
+let paused = false;
 
 // Dropping
 function allowDrop(e) { e.preventDefault(); }
@@ -137,17 +141,19 @@ function drop(e) {
    }
 }
 
-// Time loop
+// Time
 setInterval(() => {
-   time++;
-   if (time === 8) { createCustomer(); }
-   if (time === 14) { createCustomer(); createCustomer(); }
-   if (time === 18) { createCustomer(); }
-   if (time === 24) { createCustomer(); createCustomer(); createCustomer(); }
-   if (time === 34) { createCustomer(); }
+   if (!paused) TIME.lvlTime++;
+   if (TIME.lvlTime === 8) { createCustomer(); }
+   if (TIME.lvlTime === 14) { createCustomer(); createCustomer(); }
+   if (TIME.lvlTime === 18) { createCustomer(); }
+   if (TIME.lvlTime === 24) { createCustomer(); createCustomer(); createCustomer(); }
+   if (TIME.lvlTime === 34) { createCustomer(); }
    // Other stuff
    document.querySelector(".playerMoney").textContent = `${cashValues.money}$`;
 }, 1000);
+
+function pause() { paused ? paused = false : paused = true; }
 
 // Make new food items
 function createNewSteak() {
@@ -167,33 +173,70 @@ function createNewBread() {
 
 // Start cooking
 function startCooking(inPan, whichSteak) {
-   setTimeout(() => {
-      document.querySelector(`#${whichSteak}`).src = "Images/cooked-steak.svg";
-      document.querySelector(`#${whichSteak}`).dataset.iscooked = true;
-   }, 3000);
+   let cookingTimeLeft = 3000;
+   let cookSteak = setInterval(() => {
+      if (!paused) {
+         cookingTimeLeft -= 100;
+         if (cookingTimeLeft === 0) {
+            document.querySelector(`#${whichSteak}`).src = "Images/cooked-steak.svg";
+            document.querySelector(`#${whichSteak}`).dataset.iscooked = true;
+            clearInterval(cookSteak);
+         }
+      }
+   }, 100);
 }
 
 // Create customers
 function createCustomer() {
    if (!countertop.spot1) {
       let custImg = doBasic(1);
-      let joyLoop = setInterval(() => { checkCustStatus(1, joyLoop, custImg); }, 3000); // 18 seconds
+      let nextRun = 3000;
+      let joyLoop = setInterval(() => {
+         if (!paused) {
+            if (nextRun === 0) { checkCustStatus(1, joyLoop, custImg); nextRun = 3000; }
+            else { nextRun -= 100; }
+         }
+      }, 100);
    }
    else if (!countertop.spot2) {
       let custImg = doBasic(2);
-      let joyLoop = setInterval(() => { checkCustStatus(2, joyLoop, custImg); }, 3000);
+      let nextRun = 3000;
+      let joyLoop = setInterval(() => {
+         if (!paused) {
+            if (nextRun === 0) { checkCustStatus(2, joyLoop, custImg); nextRun = 3000; }
+            else { nextRun -= 100; }
+         }
+      }, 100);
    }
    else if (!countertop.spot3) {
       let custImg = doBasic(3);
-      let joyLoop = setInterval(() => { checkCustStatus(3, joyLoop, custImg); }, 3000);
+      let nextRun = 3000;
+      let joyLoop = setInterval(() => {
+         if (!paused) {
+            if (nextRun === 0) { checkCustStatus(3, joyLoop, custImg); nextRun = 3000; }
+            else { nextRun -= 100; }
+         }
+      }, 100);
    }
    else if (!countertop.spot4) {
       let custImg = doBasic(4);
-      let joyLoop = setInterval(() => { checkCustStatus(4, joyLoop, custImg); }, 3000);
+      let nextRun = 3000;
+      let joyLoop = setInterval(() => {
+         if (!paused) {
+            if (nextRun === 0) { checkCustStatus(4, joyLoop, custImg); nextRun = 3000; }
+            else { nextRun -= 100; }
+         }
+      }, 100);
    }
    else if (!countertop.spot5) {
       let custImg = doBasic(5);
-      let joyLoop = setInterval(() => { checkCustStatus(5, joyLoop, custImg); }, 3000);
+      let nextRun = 3000;
+      let joyLoop = setInterval(() => {
+         if (!paused) {
+            if (nextRun === 0) { checkCustStatus(5, joyLoop, custImg); nextRun = 3000; }
+            else { nextRun -= 100; }
+         }
+      }, 100);
    }
    else { waitingCustomers++; }
    // Functions
@@ -284,10 +327,11 @@ function clearUnhappyCustomer(customer, ifTrue) {
    hideObj(`#${customer}`);
    hideObj(`#${customer}-demands`, true);
    // Only if unhappy customer
-   if (!ifTrue) {
+   if (ifTrue === undefined) {
+      console.log(countertop[custs[customer]["spot"]]);
       countertop[custs[customer]["spot"]] = false;
       if (waitingCustomers > 0) { waitingCustomers -= 1; createCustomer(); }
-}
+   }
 }
 
 // Helpful
@@ -313,12 +357,39 @@ function showObj(objId, parent) {
    }
 }
 
-// time for cooking set like Vegetable Dash plants so if paused start adding time then when unpaused add to original time
-// level, with set customers and orders
-// sauces and fries
-// pay for more plates/pans
-// burn steak
-// play/pause
-// walking customers
-// no highlighting
-// option to click and place
+/*
+// waiting customer spots not working
+1.
+~ play/pause animation
+time for cooking set like VD plants so if paused start adding time then when unpaused add to original time
+
+2.
+~ More plates/pans
+~ Save
+
+3.
+~ Levels (set orders/customers)
+~ Map
+~ end of level, 3 stars
+
+4.
+~ Walking customers
+~ Tip jar, upgrade for happier customers
+
+5.
+~ option to click and place
+~ other settings
+
+6.
+~ sauces and fries
+~ burn steak
+
+7.
+~ popup saying how it goes
+
+8.
+~ Fixing what we will have messed up
+
+9.
+~ make another island
+*/
