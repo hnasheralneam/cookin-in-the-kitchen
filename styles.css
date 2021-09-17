@@ -22,6 +22,35 @@ body {
    align-items: center;
 }
 
+#pan2 {
+   height: 10vh;
+   width: 25vh;
+   position: absolute;
+   top: 15vh;
+   left: .8vw;
+   background-image: url("Images/pan.svg");
+   background-size: contain;
+   overflow: hidden;
+   display: flex;
+   align-items: center;
+}
+
+.pan2Lock {
+   height: 10vh;
+   width: 25vh;
+   position: absolute;
+   top: 15vh;
+   left: .8vw;
+   display: flex;
+   align-items: center;
+}
+
+.pan2Lock img {
+   height: 10vh;
+   margin: -2vh 0vw 0vh 2.5vw;
+}
+
+
 #plate1 {
    height: 10vh;
    width: 16vh;

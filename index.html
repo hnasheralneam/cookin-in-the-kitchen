@@ -51,6 +51,8 @@
    </div>
    <div class="stove">
       <div id="pan1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+      <div id="pan2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+      <div class="pan2Lock" title="Cost 25$ to unlock (double click to purchase)" ondblclick="if (cashValues.money >= 25) { hideObj(`.pan2Lock`); }"><img src="Images/lock.svg"></div>
    </div>
    <div id="trsh-cn" ondrop="drop(event)" ondragover="allowDrop(event)"><p style="pointer-events: none;">Trash <br> Cn</p></div>
 

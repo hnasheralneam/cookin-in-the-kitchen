@@ -1,6 +1,7 @@
 // Variables
 const pans = {
    pan1: false,
+   pan2: false
 }
 const plates = {
    plate1: [],
@@ -75,7 +76,7 @@ function drop(e) {
             document.querySelector(`#${data}`).style.opacity = "1";
             e.target.appendChild(incomer);
             // Start cooking steak
-            startCooking("pan1", data);
+            startCooking(data);
          }
       }
       // If in plate & cooked
@@ -167,7 +168,7 @@ function createNewBread() {
 }
 
 // Start cooking
-function startCooking(inPan, whichSteak) {
+function startCooking(whichSteak) {
    let cookingTimeLeft = 3000;
    let cookSteak = setInterval(() => {
       if (!paused) {
@@ -348,12 +349,8 @@ function showObj(objId, parent) {
 }
 
 /*
-// waiting customer spots not working
-// Colors only start when I arrive on page
-// theif comes and steals money if left to long
 1.
 ~ play/pause animation
-time for cooking set like VD plants so if paused start adding time then when unpaused add to original time
 
 2.
 ~ More plates/pans
@@ -384,4 +381,7 @@ time for cooking set like VD plants so if paused start adding time then when unp
 
 9.
 ~ make another island
+
+10.
+~ theif comes and steals money if left to long
 */
