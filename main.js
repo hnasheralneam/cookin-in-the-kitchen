@@ -14,31 +14,26 @@ const countertop = {
 }
 const custs = {
    customer1: {
-      isHere: false,
       joyLevel: 6,
       demands: [],
       spot: false
    },
    customer2: {
-      isHere: false,
       joyLevel: 6,
       demands: [],
       spot: false
    },
    customer3: {
-      isHere: false,
       joyLevel: 6,
       demands: [],
       spot: false
    },
    customer4: {
-      isHere: false,
       joyLevel: 6,
       demands: [],
       spot: false
    },
    customer5: {
-      isHere: false,
       joyLevel: 6,
       demands: [],
       spot: false
@@ -144,11 +139,11 @@ function drop(e) {
 // Time
 setInterval(() => {
    if (!paused) TIME.lvlTime++;
-   if (TIME.lvlTime === 8) { createCustomer(); }
-   if (TIME.lvlTime === 14) { createCustomer(); createCustomer(); }
-   if (TIME.lvlTime === 18) { createCustomer(); }
-   if (TIME.lvlTime === 24) { createCustomer(); createCustomer(); createCustomer(); }
-   if (TIME.lvlTime === 34) { createCustomer(); }
+   if (TIME.lvlTime === 4) { createCustomer(); }
+   if (TIME.lvlTime === 7) { createCustomer(); createCustomer(); }
+   if (TIME.lvlTime === 9) { createCustomer(); }
+   if (TIME.lvlTime === 12) { createCustomer(); createCustomer(); createCustomer(); }
+   if (TIME.lvlTime === 17) { createCustomer(); }
    // Other stuff
    document.querySelector(".playerMoney").textContent = `${cashValues.money}$`;
 }, 1000);
@@ -190,7 +185,7 @@ function startCooking(inPan, whichSteak) {
 function createCustomer() {
    if (!countertop.spot1) {
       let custImg = doBasic(1);
-      let nextRun = 3000;
+      let nextRun = 500;
       let joyLoop = setInterval(() => {
          if (!paused) {
             if (nextRun === 0) { checkCustStatus(1, joyLoop, custImg); nextRun = 3000; }
@@ -200,7 +195,7 @@ function createCustomer() {
    }
    else if (!countertop.spot2) {
       let custImg = doBasic(2);
-      let nextRun = 3000;
+      let nextRun = 500;
       let joyLoop = setInterval(() => {
          if (!paused) {
             if (nextRun === 0) { checkCustStatus(2, joyLoop, custImg); nextRun = 3000; }
@@ -210,7 +205,7 @@ function createCustomer() {
    }
    else if (!countertop.spot3) {
       let custImg = doBasic(3);
-      let nextRun = 3000;
+      let nextRun = 500;
       let joyLoop = setInterval(() => {
          if (!paused) {
             if (nextRun === 0) { checkCustStatus(3, joyLoop, custImg); nextRun = 3000; }
@@ -220,7 +215,7 @@ function createCustomer() {
    }
    else if (!countertop.spot4) {
       let custImg = doBasic(4);
-      let nextRun = 3000;
+      let nextRun = 500;
       let joyLoop = setInterval(() => {
          if (!paused) {
             if (nextRun === 0) { checkCustStatus(4, joyLoop, custImg); nextRun = 3000; }
@@ -230,7 +225,7 @@ function createCustomer() {
    }
    else if (!countertop.spot5) {
       let custImg = doBasic(5);
-      let nextRun = 3000;
+      let nextRun = 500;
       let joyLoop = setInterval(() => {
          if (!paused) {
             if (nextRun === 0) { checkCustStatus(5, joyLoop, custImg); nextRun = 3000; }
@@ -241,14 +236,13 @@ function createCustomer() {
    else { waitingCustomers++; }
    // Functions
    function doBasic(num) {
+      showObj(`#customer${num}`);
       // Choose a spot for the customer and set them as here
-      custs[`customer${num}`]["isHere"] = true
       custs[`customer${num}`]["spot"] = chooseSpot();
-      countertop[custs[`customer${num}`]["spot"]] = true;
+      countertop[`spot${num}`] = true;
       // Choose customer image and set it
       let newCustomer = choosePerson();
       document.querySelector(`#customer${num}`).src = `Images/Customers/${newCustomer}/${custs[`customer${num}`]["joyLevel"]}.svg`;
-      showObj(`#customer${num}`);
       // Give them demands and display their dreams
       custs[`customer${num}`]["demands"] = createOrder(custs[`customer${num}`]);
       if (custs[`customer${num}`]["demands"].includes("plainBurger")) { setDream(`#customer${num}-demands`, "plain-burger.svg"); }
@@ -267,7 +261,6 @@ function createCustomer() {
    }
    function checkCustStatus(num, theirLoop, img) {
       if (custs[`customer${num}`]["demands"] !== "satiated") {
-         // Set joy level image
          if (custs[`customer${num}`]["joyLevel"] >= 1) {
             document.querySelector(`#customer${num}`).src = `Images/Customers/${img}/${custs[`customer${num}`]["joyLevel"]}.svg`;
             custs[`customer${num}`]["joyLevel"]--;
@@ -294,7 +287,6 @@ function earnMoney(num) {
    cashValues.money += cashValues[moneyType];
    hideObj(`#money${num}`);
    countertop[`spot${num}`] = false;
-   // If there is a customer waiting
    if (waitingCustomers > 0) { waitingCustomers -= 1; createCustomer(); }
 }
 
@@ -321,17 +313,15 @@ function clearCustomer(customer, plate) {
    clearUnhappyCustomer(customer, true);
 }
 function clearUnhappyCustomer(customer, ifTrue) {
-   custs[customer]["isHere"] = false;
    custs[customer]["joyLevel"] = 6;
-   custs[customer]["spot"] = false;
    hideObj(`#${customer}`);
    hideObj(`#${customer}-demands`, true);
-   // Only if unhappy customer
    if (ifTrue === undefined) {
-      console.log(countertop[custs[customer]["spot"]]);
-      countertop[custs[customer]["spot"]] = false;
-      if (waitingCustomers > 0) { waitingCustomers -= 1; createCustomer(); }
+      let thisCustNum = customer.replace("customer", "");
+      countertop[`spot${thisCustNum}`] = false;
+      if (waitingCustomers > 0) { waitingCustomers -= 1; setTimeout(() => { createCustomer(); }, 250); }
    }
+   custs[customer]["spot"] = "none";
 }
 
 // Helpful
@@ -359,6 +349,8 @@ function showObj(objId, parent) {
 
 /*
 // waiting customer spots not working
+// Colors only start when I arrive on page
+// theif comes and steals money if left to long
 1.
 ~ play/pause animation
 time for cooking set like VD plants so if paused start adding time then when unpaused add to original time
