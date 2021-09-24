@@ -14,3 +14,11 @@ body {
    height: 600px;
    width: auto;
 }
+
+.fastfood {
+   position: absolute;
+   top: 355px;
+   left: 340px;
+   height: 175px;
+   width: 210px;
+}
