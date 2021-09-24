@@ -310,3 +310,28 @@ body {
 }
 
 .closeModal:hover { text-shadow: 0 0 .25vh #594500; }
+
+a {
+   color: #fff;
+   text-decoration: none;
+}
+
+a:hover {
+   color: #fff;
+   animation: shiver 1s 1;
+}
+
+@keyframes shiver {
+   0% {
+      transform: translate(5vh, 5vh);
+   }
+   5% {
+      transform: translate(-5vh);
+   }
+   10% {
+      transform: translate(5vh);
+   }
+   100% {
+      transform: translate(5vh);
+   }
+}
