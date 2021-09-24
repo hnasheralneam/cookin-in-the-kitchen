@@ -349,11 +349,12 @@ function showObj(objId, parent) {
 }
 
 /*
+// fix innaccurate money
 1.
 ~ play/pause animation
 
 2.
-~ More plates/pans
+~ More plates
 ~ Save
 
 3.

@@ -185,16 +185,10 @@ body {
    position: absolute;
    left: 2vw;
    bottom: 2vh;
-   height: 20vh;
-   width: 8vw;
-   text-align: center;
-   background-color: #005960;
-}
-
-#trsh-cn p {
-   color: #fff;
-   font-family: "GoodFont3";
-   font-size: 5vh
+   height: 22vh;
+   width: 8.6vw;
+   background-image: url("Images/trshcn.svg");
+   background-size: contain;
 }
 
 .customerTooltipParent { display: inline-block; }
