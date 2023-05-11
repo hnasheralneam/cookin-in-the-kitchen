@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Cookin' in the Kitchen</title>
+   <link rel="stylesheet" href="Styles/home.css">
+</head>
+<body>
+    <img class="map" src="Images/map.png">
+    <a href="/play">Play</a>
+    <div class="multiplayer-menu">
+        <p>Multiplayer</p>
+        <button onclick="openModal('join')">Join</button>
+        <button onclick="openModal('create')">Create</button>
+        <p>Best if used with a voice chat</p>
+        <p>Don't use the same nickname plz</p>
+    </div>
+    <div class="join-room">
+        <div class="modal-content">
+            <h1>Join a Room</h1>
+            <button onclick="openModal('join')">close menu (X)</button>
+            <form class="join-form" action="" onsubmit="return joinRoom()">
+                <p class="error-place"></p>
+                <h2>Room Code</h2>
+                <input class="roomcode" type="text" name="roomcode" required>
+                <h3>Nickname</h3>
+                <input class="nickname" type="text" name="nickname" required>
+                <input type="submit" value="Let's go!">
+            </form>
+        </div>
+    </div>
+    <div class="create-room">
+        <div class="modal-content">
+            <h1>Create a Room</h1>
+            <button onclick="openModal('create')">close menu (X)</button>
+            <form class="create-form" action="" onsubmit="return createRoom()">
+                <h2>Nickname</h2>
+                <input class="nickname" type="text" name="nickname" required>
+                <input type="submit" value="Let's do it!">
+            </form>
+        </div>
+    </div>
+</body>
+<script src="/socket.io/socket.io.js"></script>
+<script src="Scripts/home.js"></script>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+   <title>Cookin' in the Kitchen</title>
+   <link rel="stylesheet" href="/Styles/styles.css">
+</head>
+<body>
+   <div class="customers">
+      <div class="customerTooltipParent">
+         <img id="customer1" class="customer-template customer droppable">
+         <span class="customerTooltip"><img id="customer1-demands" class="cutomer-demands"></span>
+      </div>
+      <div class="customerTooltipParent">
+         <img id="customer2" class="customer-template customer droppable">
+         <span class="customerTooltip"><img id="customer2-demands" class="cutomer-demands"></span>
+      </div>
+      <div class="customerTooltipParent">
+         <img id="customer3" class="customer-template customer droppable">
+         <span class="customerTooltip"><img id="customer3-demands" class="cutomer-demands"></span>
+      </div>
+      <div class="customerTooltipParent">
+         <img id="customer4" class="customer-template customer droppable">
+         <span class="customerTooltip"><img id="customer4-demands" class="cutomer-demands"></span>
+      </div>
+      <div class="customerTooltipParent">
+         <img id="customer5" class="customer-template customer droppable">
+         <span class="customerTooltip"><img id="customer5-demands" class="cutomer-demands"></span>
+      </div>
+   </div>
+   <div class="moneyCounter">
+      <img id="money1" onclick="earnMoney(1)" class="money-template" src="Images/Money/goldCoin.svg">
+      <img id="money2" onclick="earnMoney(2)" class="money-template" src="Images/Money/goldCoin.svg">
+      <img id="money3" onclick="earnMoney(3)" class="money-template" src="Images/Money/goldCoin.svg">
+      <img id="money4" onclick="earnMoney(4)" class="money-template" src="Images/Money/goldCoin.svg">
+      <img id="money5" onclick="earnMoney(5)" class="money-template" src="Images/Money/goldCoin.svg">
+   </div>
+   <div class="customer-counter"></div>
+   <div class="customer-counter-edge"></div>
+   <div class="customer-counter-underspace"></div>
+   <div class="work-counter"></div>
+   <div class="work-counter-edge"></div>
+   <div class="work-counter-underspace"></div>
+    <!-- Plates -->
+   <div class="plate-carpet">
+      <div class="plate droppable draggable" data-ondrop="dropped" id="plate1"></div>
+   </div>
+    <!-- Stoves -->
+   <div class="stove">
+      <div class="pan droppable" id="pan1"></div>
+      <div class="pan droppable" id="pan2""></div>
+      <div class="pan2Lock" title="Cost 25$ to unlock (double click to purchase)" ondblclick="if (cashValues.money >= 25) { cashValues.money -= 25; hideObj(`.pan2Lock`); }"><img src="Images/lock.svg"></div>
+   </div>
+    <!-- Trash can -->
+   <div class="droppable" id="trsh-cn"></div>
+    <!-- Food supplies -->
+   <img onmouseover="createNewSteak()" ontouchstart="createNewSteak()" ondragstart="return false" class="rw-stk-strg" src="Images/raw-steak-storage.svg">
+   <img onmouseover="createNewBread()" ontouchstart="createNewBread()" ondragstart="return false" class="bgr-brd-strg" src="Images/burger-bread-storage.svg">
+   <img class="raw-steak-template draggable" data-ondrop="dropped" id="steak" data-iscooked="false" data-foodtype="steak" src="Images/raw-steak.svg">
+   <img class="burger-bread-template draggable" data-ondrop="dropped" id="burgerBread" data-foodtype="burgerBread" src="Images/burger-bread.svg">
+   <!-- Money -->
+   <span class="playerMoney" title="MONEY">0$</span>
+   <!-- Settings -->
+   <img class="settingsImg" onclick="showObj('.settingShadow'); pause();" src="Images/settings.svg">
+   <div class="shadow settingShadow">
+      <div class="modalContent settings">
+         <span onclick="hideObj('.settingShadow'); pause();" class="closeModal">X</span>
+         <a href="index.html">home</a>
+      </div>
+   </div>
+</body>
+<script src="/Scripts/dragndrop.js"></script>
+<script src="/Scripts/main.js"></script>
+</html>

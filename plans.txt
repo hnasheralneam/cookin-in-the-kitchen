@@ -1,0 +1,40 @@
+Before that - 
+Multiplayer
+Backend?
+
+// fix innaccurate money
+1.
+~ play/pause animation
+
+2.
+~ More plates
+~ Save
+
+3.
+~ Levels (set orders/customers)
+~ Map
+~ end of level, 3 stars
+
+4.
+~ Walking customers
+~ Tip jar, upgrade for happier customers
+
+5.
+~ option to click and place
+~ other settings
+
+6.
+~ sauces and fries
+~ burn steak
+
+7.
+~ popup saying how it goes
+
+8.
+~ Fixing what we will have messed up
+
+9.
+~ make another island
+
+10.
+~ theif comes and steals money if left to long

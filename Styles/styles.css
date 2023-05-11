@@ -7,15 +7,15 @@ body {
    overflow: hidden;
 }
 
-::selection { display: none;}
+::selection { display: none; }
 
-#pan1 {
+.pan {
    height: 10vh;
    width: 25vh;
    position: absolute;
    top: 2vh;
    left: .8vw;
-   background-image: url("Images/pan.svg");
+   background-image: url("/Images/pan.svg");
    background-size: contain;
    overflow: hidden;
    display: flex;
@@ -23,16 +23,7 @@ body {
 }
 
 #pan2 {
-   height: 10vh;
-   width: 25vh;
-   position: absolute;
    top: 15vh;
-   left: .8vw;
-   background-image: url("Images/pan.svg");
-   background-size: contain;
-   overflow: hidden;
-   display: flex;
-   align-items: center;
 }
 
 .pan2Lock {
@@ -55,7 +46,7 @@ body {
    height: 10vh;
    width: 16vh;
    margin: 1vh 1.8vw;
-   background-image: url("Images/plate.svg");
+   background-image: url("/Images/plate.svg");
    background-size: cover;
    overflow: hidden;
    display: flex;
@@ -134,7 +125,7 @@ body {
    left: 40vw;
    width: 20vw;
    height: 32vh;
-   background-color: #222222;
+   background-color: #222;
 }
 
 .raw-steak-template {

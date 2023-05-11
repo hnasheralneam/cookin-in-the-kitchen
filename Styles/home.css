@@ -3,22 +3,72 @@
    margin: 0;
 }
 
-body {
-   height: 100vh;
+.map {
+    max-height: 80vh;
+    max-width: 95vw;
+}
+
+.multiplayer-menu {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1em 1.4em;
+    margin: 0 3em;
+    text-align: center;
+    border-radius: 1.5em 1.5em 0 0;
+    background-color: #e6e6e6;
+    transition: all .2s;
+}
+
+@media screen and (max-width: 450px) {
+    .multiplayer-menu {
+        margin: 0;
+        border-bottom: solid .4em #e25;
+    }
+}
+
+.join-room, .create-room {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
    display: flex;
    justify-content: center;
    align-items: center;
+   backdrop-filter: blur(.4em);
+    background-color: #ffffff60;
+   opacity: 0;
+   pointer-events: none;
 }
 
-.map {
-   height: 600px;
-   width: auto;
+.modal-content {
+   padding: 2em;
+   background-color: #fff;
+   box-shadow: 18em 18em #dddddd10,
+               -18em -18em #eeeeee10;
+   transition: .3s;
+   border-radius: .6em;
 }
 
-.fastfood {
-   position: absolute;
-   top: 355px;
-   left: 340px;
-   height: 175px;
-   width: 210px;
+.modal-content:hover {
+   box-shadow: -.8em -.6em #ddd,
+               .8em .8em #eee;
+}
+
+button {
+    padding: .4em .6em;
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: .4em;
+    box-shadow: 0 0 .2em #bbb;
+}
+
+button:hover {
+    background-color: #e8e8e8;
+}
+
+button:active {
+    background-color: #f6f6f6;
 }
