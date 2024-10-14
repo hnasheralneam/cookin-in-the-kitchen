@@ -6,7 +6,7 @@
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
    <title>Cookin' in the Kitchen</title>
-   <link rel="stylesheet" href="/Styles/styles.css">
+   <link rel="stylesheet" href="/styles/styles.css">
 </head>
 <body>
    <div class="customers">
@@ -44,19 +44,21 @@
    <div class="work-counter"></div>
    <div class="work-counter-edge"></div>
    <div class="work-counter-underspace"></div>
-    <!-- Plates -->
+   <!-- Trash can -->
+   <div class="droppable" id="trsh-cn">
+      <img src="Images/trshcn.svg" alt="trsh cn" width="160">
+   </div>
+   <!-- Plates -->
    <div class="plate-carpet">
       <div class="plate droppable draggable" data-ondrop="dropped" id="plate1"></div>
    </div>
-    <!-- Stoves -->
+   <!-- Stoves -->
    <div class="stove">
       <div class="pan droppable" id="pan1"></div>
       <div class="pan droppable" id="pan2""></div>
       <div class="pan2Lock" title="Cost 25$ to unlock (double click to purchase)" ondblclick="if (cashValues.money >= 25) { cashValues.money -= 25; hideObj(`.pan2Lock`); }"><img src="Images/lock.svg"></div>
    </div>
-    <!-- Trash can -->
-   <div class="droppable" id="trsh-cn"></div>
-    <!-- Food supplies -->
+   <!-- Food supplies -->
    <img onmouseover="createNewSteak()" ontouchstart="createNewSteak()" ondragstart="return false" class="rw-stk-strg" src="Images/raw-steak-storage.svg">
    <img onmouseover="createNewBread()" ontouchstart="createNewBread()" ondragstart="return false" class="bgr-brd-strg" src="Images/burger-bread-storage.svg">
    <img class="raw-steak-template draggable" data-ondrop="dropped" id="steak" data-iscooked="false" data-foodtype="steak" src="Images/raw-steak.svg">
@@ -68,10 +70,10 @@
    <div class="shadow settingShadow">
       <div class="modalContent settings">
          <span onclick="hideObj('.settingShadow'); pause();" class="closeModal">X</span>
-         <a href="index.html">home</a>
+         <a href="/">home</a>
       </div>
    </div>
 </body>
-<script src="/Scripts/dragndrop.js"></script>
-<script src="/Scripts/main.js"></script>
+<script src="/scripts/dragndrop.js"></script>
+<script src="/scripts/main.js"></script>
 </html>

@@ -1,4 +1,4 @@
-var socket = io();
+let socket = io();
 
 // Join room
 let userInfo = JSON.parse(localStorage.getItem("userInfo"));

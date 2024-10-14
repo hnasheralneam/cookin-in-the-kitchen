@@ -109,7 +109,7 @@ function dropped(element, target) {
     }
     // Trsh Cn
     if (target.id == "trsh-cn") {
-        if (incomer.classList.contains("plate")) {
+        if (element.classList.contains("plate")) {
             element.innerHTML = "";
             plates[element.id] = [];
         }

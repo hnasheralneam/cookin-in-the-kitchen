@@ -37,7 +37,7 @@ socket.on("room created", (data) => {
         usertype: data.usertype,
         location: "home"
     }));
-    location.href = location.href + `/multi/${data.roomname}`;
+    location.href = location.href + `multi/${data.roomname}`;
 });
 
 socket.on("joined room", (data) => {
@@ -47,8 +47,9 @@ socket.on("joined room", (data) => {
         roomname: data.roomname,
         usertype: data.usertype,
         location: "home"
+        // pos added later
     }));
-    location.href = location.href + `/multi/${data.roomname}/waiting-room`;
+    location.href = location.href + `multi/${data.roomname}/waiting-room`;
 });
 
 socket.on("no such room", (errorMessage) => {

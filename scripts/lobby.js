@@ -4,7 +4,7 @@ var socket = io();
 let userInfo = JSON.parse(localStorage.getItem("userInfo"));
 userInfo.location = "lobby";
 
-if (userInfo.nickname == "undefined") location.href = window.location.origin;
+if (typeof userInfo.nickname == "undefined") location.href = window.location.origin;
 
 
 // Ensure that all user data is up-to-date
@@ -92,3 +92,72 @@ function updateUsersList(users) {
         document.querySelector(".inRoom").append(listItem);
     });
 }
+
+// Add start button for leader
+if (userInfo.usertype == "leader") {
+    let startButton = document.createElement("BUTTON")
+    startButton.textContent = "Start game";
+    startButton.onclick = () => { start() };
+    document.body.querySelector(".main").append(startButton);
+}
+
+// Latency test
+
+let latency;
+let sent = new Date();
+socket.emit("test latency");
+
+socket.on("latency tested", () => {
+    let received = new Date();
+    latency = received - sent;
+    console.log("latency: " + latency / 1000);
+});
+
+
+// Handle cursor displays
+function start() {
+    console.log("started")
+    socket.emit("get cursors");
+}
+
+let lastMousex, lastMousey;
+socket.on("start sending cursors", () => {
+    let sendCursorsLoop = setInterval(() => {
+        if (lastMousex != dragAndDrop.mousex || lastMousey != dragAndDrop.mousey) {
+            lastMousex = dragAndDrop.mousex;
+            lastMousey = dragAndDrop.mousey;
+            socket.emit("cursor position", { x: dragAndDrop.mousex, y: dragAndDrop.mousey });
+        }
+    }, latency);
+});
+
+socket.on("cursor positions", (cursorPositions) => {
+    cursorPositions.forEach((cursorPos) => {
+        if (cursorPos.name === userInfo.nickname) return; // Skip current user's cursor
+
+        let cursorElement = document.querySelector(`.cursor-${cursorPos.name}`);
+        if (!cursorElement) {
+            cursorElement = document.createElement("div");
+            cursorElement.classList.add(`cursor-${cursorPos.name}`);
+            cursorElement.classList.add("cursor");
+            cursorElement.title = cursorPos.name;
+            document.body.append(cursorElement);
+        }
+        cursorElement.style.left = cursorPos.pos.x + "px";
+        cursorElement.style.top = cursorPos.pos.y + "px";
+    });
+});
+
+// Lobby chat - html is this
+function sendMessage(event) {
+    event.preventDefault();
+    let message = document.querySelector(".message-input").value;
+    document.querySelector(".message-input").value = "";
+    socket.emit("lobby chat message", { message: message, nickname: userInfo.nickname }, userInfo.roomname);
+}
+
+socket.on("lobby chat message", ({ message, nickname }) => {
+    let messageEl = document.createElement("p");
+    messageEl.textContent = `${nickname}: ${message}`;
+    document.querySelector(".messages").append(messageEl);
+});

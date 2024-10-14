@@ -1,7 +1,10 @@
-Before that - 
-Multiplayer
-Backend?
+##### Multiplayer ######
+REMOVE FROM ROOM ON RELOAD
+- chat in wait room
+- mark as ready for waiting room
 
+
+##### Game #####
 // fix innaccurate money
 1.
 ~ play/pause animation

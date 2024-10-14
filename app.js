@@ -8,12 +8,17 @@ const uuid = require("uuid");
 
 app.set("view engine", "ejs");
 
-app.use("/Scripts", express.static("Scripts"));
-app.use("/Styles", express.static("Styles"));
+app.use("/scripts", express.static("scripts"));
+app.use("/styles", express.static("styles"));
 app.use("/Images", express.static("Images"));
 
 let rooms = [];
 io.on("connection", (socket) => {
+    // Latency test
+    socket.on("test latency", () => {
+        socket.emit("latency tested");
+    });
+
     let userData = {}
     socket.on("user data updated", (userInfo, oldSocketId) => {
         userData = userInfo;
@@ -43,8 +48,31 @@ io.on("connection", (socket) => {
         }
     });
 
+    
+    // Handle cursors
+    socket.on("get cursors", () => {
+        // start sending cursors
+        let indexInRooms = rooms.findIndex(room => room.info.name === userData.roomname);
+        let sendCursorsPosLoop = setInterval(() => {
+            let cursorPositions = rooms[indexInRooms]["users"].map(user => ({ name: user.nickname, pos: user.pos }));
+            io.in(rooms[indexInRooms]["info"].name).emit("cursor positions", cursorPositions);
+        }, 100);
+        io.in(rooms[indexInRooms]["info"].name).emit("start sending cursors");
+    });
 
-    // THIS PROGRAM HAS NOT BEEN TESTED WITH MULTIPLE ROOMS!
+    socket.on("cursor position", (cursorPos) => {
+        userData.pos = cursorPos;
+
+        let indexInRooms = rooms.findIndex(room => room.info.name === userData.roomname);
+        let indexInUsers = rooms[indexInRooms]["users"].findIndex(user => user.socketid == userData.socketid);
+        if (indexInUsers != -1) rooms[indexInRooms]["users"][indexInUsers] = userData;
+    });
+
+
+
+
+    // There might be a problem with multiple rooms
+    // And since this is the bug corner, I don't think it'll work if people have the same username (it the same room)
     socket.on("create room", () => {
         let roomid = uuid.v4();
         rooms.push({
@@ -122,6 +150,11 @@ io.on("connection", (socket) => {
         // Sends to all in room
         io.in(rooms[indexInRooms]["info"].name).emit("users in lobby updated", rooms[indexInRooms]["users"]);
     });
+
+    // Lobby chat
+    socket.on("lobby chat message", (messageInfo, room) => {
+        io.in(room).emit("lobby chat message", messageInfo);
+    });
 });
 
 
@@ -139,11 +172,10 @@ app.get("/multi/:roomname", (req, res) => {
 });
 
 app.get("/multi/:roomname/waiting-room", (req, res) => {
-    let roomname = req.params.roomname;
     res.render("waiting");
 });
 
 
-server.listen(3000, () => {
+server.listen(3001, () => {
     console.log("Started");
 });
